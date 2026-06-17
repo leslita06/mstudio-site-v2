@@ -104,6 +104,11 @@
 .feat-num{font-family:'Funnel Display';font-weight:800;font-size:clamp(52px,7vw,84px);color:var(--ocean);line-height:.9;letter-spacing:-0.03em;margin-top:14px;}
 @media(max-width:1080px){.net-grid{grid-template-columns:1fr;}.val-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:600px){.val-grid{grid-template-columns:1fr;}}
+.net-ico{width:54px;height:54px;border-radius:15px;background:linear-gradient(135deg,#0077B6,#38B6AB);display:grid;place-items:center;color:#fff;}
+.net-ico svg{width:27px;height:27px;}
+.arch-img{align-self:stretch;display:flex;}
+.arch-img img{width:100%;height:100%;min-height:340px;object-fit:cover;border-radius:1000px 1000px 0 0;}
+@media(max-width:900px){.arch-img img{min-height:300px;}}
 </style>
 </head>
 <body>
@@ -138,7 +143,7 @@
       <p class="reveal d2">Nous sommes trois cofondateurs. <b>Leslie Ossété</b>, sa connaissance intime du secteur informel. <b>Cédric Mangaud</b>, son ADN produit mobile. <b>Clyde Fakhoury</b>, son expertise de l'investissement en Afrique.</p>
       <a href="#cta" class="btn btn-accent reveal d3">Rejoins-nous</a>
     </div>
-    <div class="ap-hero-photo reveal d2"><img src="assets/fondateurs.png" alt="Les cofondateurs"></div>
+    <div class="ap-hero-photo reveal d2"><img src="assets/fondateurs.png?v=2" alt="Les cofondateurs"></div>
   </div>
 </section>
 
@@ -193,16 +198,19 @@
     <div class="shead center reveal"><h2 class="disp">Un réseau qui accélère ta startup</h2></div>
     <div class="net-grid">
       <div class="net-card reveal">
+        <div class="net-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3 2.7-5 6-5s6 2 6 5"/><path d="M16 5.5a3 3 0 0 1 0 5.4"/><path d="M18 14.5c2 .6 3.5 2.3 3.5 4.5"/></svg></div>
         <span class="net-eye">Effet réseau</span>
         <h3>Une communauté de startups</h3>
         <p>Toutes nos startups ciblent le secteur informel. Elles partagent une base de clients commune, apprennent les unes des autres et accèdent à un go-to-market accéléré par effet réseau.</p>
       </div>
       <div class="net-card reveal d1">
+        <div class="net-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M21 8v4h-4"/></svg></div>
         <span class="net-eye">Investisseurs</span>
         <h3>50 Friendly VCs</h3>
         <p>Un réseau de 50 VCs friendly, européens et africains, qui suivent nos startups dès l'EIR. Tu n'envoies pas de cold emails, tu entres dans des conversations déjà chaudes. Un tour de table qui se structure en mois, pas en années.</p>
       </div>
       <div class="net-card reveal d2">
+        <div class="net-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="11" height="18" rx="1"/><path d="M15 8h5v13H4"/><path d="M8 7h3M8 11h3M8 15h3"/></svg></div>
         <span class="net-eye">Corporates</span>
         <h3>20+ Friendly Corporates</h3>
         <p>Plus de 20 partenaires corporates curés par industrie : banques, grands groupes agro, télécoms, logisticiens. Tu accèdes aux décideurs, signes tes premiers contrats grands comptes et valides ton GTM B2B avant la Série A.</p>
@@ -215,12 +223,21 @@
 <section class="section bone">
   <div class="wrap">
     <div class="shead reveal"><h2 class="disp">Ce que nous apportons</h2><p>Plus qu'une structure d'accompagnement, nous sommes ton troisième cofondateur.</p></div>
-    <div class="val-grid reveal d1">
-      <div class="val-card"><div class="val-n">100</div><h4>Tâches du playbook</h4><p>100 tâches reproductibles capitalisées sur nos lancements. Des méthodes éprouvées pour aller de l'idée à la Seed sans réinventer la roue.</p></div>
-      <div class="val-card"><div class="val-n">200</div><h4>Agents IA</h4><p>200 agents IA propriétaires : automatisation back-office, scoring, support client, opérations. Une stack qui accélère ton MVP et tes process dès le jour 1.</p></div>
-      <div class="val-card"><div class="val-n">30</div><h4>Outils</h4><p>30 outils dont ta startup a besoin pour communiquer, construire son produit et opérationnaliser ses process. Plug &amp; play, négociés, mutualisés.</p></div>
-      <div class="val-card"><div class="val-n">12</div><h4>VIP Guests / an</h4><p>12 VIP Guests par an viennent à Abidjan coacher, inspirer et transmettre leur savoir-faire à nos startups. Tech leaders, investisseurs, opérateurs internationaux.</p></div>
-      <div class="val-card"><div class="val-n">1</div><h4>Board Member</h4><p>1 board member par startup, avec une expertise internationale, qui s'implique dans la réussite de ton tour de table et tes décisions stratégiques.</p></div>
+    <div class="app-tabs reveal d1">
+      <div class="app-tab active" data-i="0">Playbook</div>
+      <div class="app-tab" data-i="1">Agents IA</div>
+      <div class="app-tab" data-i="2">Outils</div>
+      <div class="app-tab" data-i="3">VIP Guests</div>
+      <div class="app-tab" data-i="4">Board</div>
+    </div>
+    <div class="app-panel reveal d1">
+      <div>
+        <div class="num disp" id="apNum">100</div>
+        <h4 id="apH">Tâches du playbook</h4>
+        <p id="apP">100 tâches reproductibles capitalisées sur tous nos lancements. Des méthodes éprouvées pour aller de l'idée à la Seed sans réinventer la roue.</p>
+        <a href="cofondateur.html" class="btn btn-accent" style="margin-top:26px;">Rejoins-nous</a>
+      </div>
+      <div class="app-illust"><img id="apImg" src="assets/playbook.jpg" alt="Le playbook Mstudio"></div>
     </div>
   </div>
 </section>
@@ -229,11 +246,12 @@
 <section class="section">
   <div class="wrap">
     <div class="gssn">
-      <div class="gssn-card reveal"><img src="assets/bureaux.png" alt="Les bureaux Mstudio à l'Ivoire Trade Center, Abidjan"></div>
+      <div class="arch-img reveal"><img src="assets/bureaux.png" alt="Les bureaux Mstudio à l'Ivoire Trade Center, Abidjan"></div>
       <div class="gssn-right reveal d1 feat-text">
-        <h2 class="disp">Au cœur d'Abidjan</h2>
-        <div class="feat-num">500 m²</div>
-        <p>Au cœur de l'Ivoire Trade Center à Abidjan, Mstudio met à ta disposition 500 m² d'espace : 3 salles de réunion, une mezzanine, un open space, 7 bureaux privés, 1 studio podcast, 8 cabines focus, 2 cabines téléphoniques et une terrasse extérieure.</p>
+        <span class="net-eye">Nos bureaux</span>
+        <h2 class="disp">Un lieu pensé pour construire</h2>
+        <p>Au rez-de-chaussée de la tour D de l'Ivoire Trade Center, en plein cœur du quartier des ambassades à Cocody, nos bureaux sont bien plus qu'un espace de travail. C'est là que nos équipes et nos cofondateurs se croisent chaque jour, que les idées circulent et que les startups grandissent côte à côte.</p>
+        <p>Salles de réunion, open space, studio podcast, cabines focus et terrasse extérieure : près de 500 m² entièrement pensés pour construire vite et bien, ensemble.</p>
       </div>
     </div>
   </div>
@@ -244,10 +262,11 @@
   <div class="wrap">
     <div class="gssn">
       <div class="gssn-right reveal feat-text">
+        <span class="net-eye">Méthodologie</span>
         <h2 class="disp">Une méthodologie reconnue mondialement</h2>
         <p>Mstudio est membre officiel du GSSN (Global Startup Studio Network), la communauté sélective des meilleurs venture studios au monde. Méthodes éprouvées, peer learning et best practices importées en direct, de l'idéation au product-market fit.</p>
       </div>
-      <div class="gssn-card reveal d1"><img src="assets/gssn-card.jpg" alt="Global Startup Studio Network, 50+ startup studios membres"></div>
+      <div class="arch-img reveal d1"><img src="assets/gssn-card.jpg" alt="Global Startup Studio Network, 50+ startup studios membres"></div>
     </div>
   </div>
 </section>
@@ -319,6 +338,19 @@ burger.addEventListener('click',()=>{const o=menu.classList.toggle('open');burge
 menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');burger.classList.remove('open');}));
 const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+const AP=[
+ {n:'100',h:'Tâches du playbook',p:"100 tâches reproductibles capitalisées sur tous nos lancements. Des méthodes éprouvées pour aller de l'idée à la Seed sans réinventer la roue.",img:'assets/playbook.jpg'},
+ {n:'200',h:'Agents IA',p:"200 agents IA propriétaires qui automatisent le back-office, le scoring, le support client et les opérations. Une stack qui accélère ton MVP et tes process dès le premier jour.",img:'assets/ai.jpg'},
+ {n:'30',h:'Outils',p:"30 outils dont ta startup a besoin pour communiquer, construire son produit et opérationnaliser ses process. Négociés et mutualisés, prêts à l'emploi.",img:'assets/outils.png'},
+ {n:'12',h:'VIP Guests par an',p:"12 VIP Guests viennent chaque année à Abidjan coacher et inspirer nos startups : tech leaders, investisseurs et opérateurs internationaux qui transmettent leur savoir-faire.",img:'assets/reseau.png'},
+ {n:'1',h:'Board Member',p:"1 board member par startup, avec une expertise internationale, qui s'implique dans ton tour de table et tes décisions stratégiques.",img:'assets/ap-coreteam.jpg'},
+];
+const apTabs=document.querySelectorAll('.app-tab');
+function renderAp(i){const a=AP[i];document.getElementById('apNum').textContent=a.n;document.getElementById('apH').textContent=a.h;document.getElementById('apP').textContent=a.p;document.getElementById('apImg').src=a.img;apTabs.forEach((t,j)=>t.classList.toggle('active',j===i));}
+apTabs.forEach((t,i)=>t.addEventListener('click',()=>renderAp(i)));
+renderAp(0);
+
 
 </script>
 </body>
