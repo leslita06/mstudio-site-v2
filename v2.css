@@ -320,7 +320,7 @@ a{color:inherit;text-decoration:none;}
 
 /* WHY card */
 .why{padding:70px 0;background:var(--space);}
-.why-card{position:relative;overflow:hidden;border-radius:22px;min-height:620px;background:url('assets/why-bg.png') center/cover no-repeat;display:flex;align-items:flex-end;padding:64px;}
+.why-card{position:relative;overflow:hidden;border-radius:22px;min-height:620px;background:url('assets/why-bg.webp') center/cover no-repeat;display:flex;align-items:flex-end;padding:64px;}
 .why-card::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,4,94,.35),rgba(3,4,94,.05) 55%,rgba(3,4,94,.15));}
 .why-arcs{position:absolute;z-index:1;pointer-events:none;}
 .why-arcs.teal{top:34%;left:54%;width:340px;height:340px;transform:translate(-50%,-50%);opacity:.9;}
