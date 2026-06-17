@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Startup — Mstudio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="v2.css?v=48">
+<style>
+.sp-hero{position:relative;background:var(--space);color:#fff;padding:140px 0 90px;}
+body{background:var(--space);overflow-x:clip;}
+.sp-glows{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;}
+.sp-hero .hero-glow{position:absolute;width:680px;height:680px;border-radius:50%;filter:blur(120px);opacity:.28;pointer-events:none;}
+.sp-hero .g1{background:var(--ocean);top:-220px;left:-160px;}
+.sp-hero .g2{background:var(--ciel);bottom:-300px;right:-120px;opacity:.18;}
+.sp-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.5fr 0.9fr;gap:60px;align-items:start;}
+.sp-back{position:fixed;top:100px;left:32px;z-index:60;display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border:1px solid rgba(255,255,255,.25);border-radius:50%;color:#fff;background:rgba(3,4,94,.5);backdrop-filter:blur(8px);transition:background .2s;}
+.sp-back:hover{background:rgba(255,255,255,.12);}
+.sp-crumb{font-size:16px;letter-spacing:.22em;text-transform:uppercase;color:#8b91bb;margin-bottom:18px;}
+.sp-name{font-family:'Funnel Display';font-weight:800;font-size:clamp(48px,8vw,104px);line-height:.95;letter-spacing:-0.03em;margin:0;text-transform:uppercase;}
+.sp-intro{font-size:21px;color:#c5cbe6;line-height:1.6;margin:26px 0 0;max-width:52ch;}
+.sp-tag{font-style:italic;color:var(--ciel);font-size:20px;margin:18px 0 0;}
+/* sidebar */
+.sp-side{background:transparent;align-self:stretch;}
+.sp-side-inner{position:sticky;top:104px;}
+.sp-logo{background:#fff;border-radius:16px;height:180px;display:flex;align-items:center;justify-content:center;padding:34px;margin-bottom:8px;}
+.sp-logo img{max-height:64px;max-width:80%;object-fit:contain;}
+.sp-row{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:start;padding:18px 0;border-top:1px solid rgba(255,255,255,.12);}
+.sp-row .k{font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:#8b91bb;}
+.sp-row .v{text-align:right;font-size:16px;font-weight:600;color:#fff;}
+.sp-row .v a{color:var(--ciel);}
+.sp-row .v .ln{display:block;}
+.sp-dot{display:inline-flex;align-items:center;gap:8px;}
+.sp-dot::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--ocean);}
+/* about */
+.sp-block{margin-top:70px;}
+.sp-about h2{font-size:16px;letter-spacing:.18em;text-transform:uppercase;color:var(--ocean);margin:0 0 26px;}
+.sp-about p{font-size:20px;line-height:1.75;color:#c5cbe6;max-width:70ch;margin:0 0 18px;}
+.sp-about .lead{font-size:22px;color:#fff;font-weight:500;}
+/* founders */
+.sp-fond{margin-top:70px;}
+.sp-fond h2{font-size:16px;letter-spacing:.18em;text-transform:uppercase;color:var(--ocean);margin:0 0 34px;}
+.sp-fgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+.sp-fcard .ph{border-radius:50%;overflow:hidden;aspect-ratio:1/1;background:linear-gradient(150deg,var(--ocean),var(--ciel));margin-bottom:14px;}
+.sp-fcard .ph img{width:100%;height:100%;object-fit:cover;}
+.sp-fcard{text-align:center;}
+.sp-fcard .nm{font-weight:700;font-size:16px;color:#fff;}
+.sp-fcard .rl{color:#8b91bb;font-size:14px;margin-top:2px;}
+@media(max-width:980px){
+  .sp-grid{grid-template-columns:1fr;gap:44px;}
+  .sp-fgrid{grid-template-columns:repeat(2,1fr);}
+  .sp-side-inner{position:static;}
+}
+@media(max-width:600px){ .sp-hero{padding:120px 0 50px;} .sp-fgrid{grid-template-columns:1fr 1fr;gap:16px;} .sp-back{top:88px;left:20px;} }
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="nav-logo" href="index.html"><img class="logo-white" src="assets/logo-white.png" alt="Mstudio"><img class="logo-color" src="assets/logo-color.png" alt="Mstudio"></a>
+    <nav class="nav-menu" id="navMenu">
+      <a href="index.html">Accueil</a>
+      <a href="a-propos.html">À propos</a>
+      <a href="startups.html">Nos startups</a>
+      <a href="cofondateur.html" class="m-only btn btn-accent" style="margin-top:8px;justify-content:center;">Deviens cofondateur</a>
+    </nav>
+    <div class="nav-right">
+      <a href="cofondateur.html" class="btn btn-cofounder" style="font-size: 18px; padding: 17px 30px; height: 50px; letter-spacing: 1px">Deviens cofondateur</a>
+      <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<section class="sp-hero">
+  <div class="sp-glows"><div class="hero-glow g1"></div><div class="hero-glow g2"></div></div>
+  <div class="wrap sp-grid">
+    <div class="sp-main">
+      <a class="sp-back" href="startups.html" aria-label="Retour"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg></a>
+      <div class="sp-crumb" id="spCrumb"><a href="startups.html" style="color:inherit">Startups</a> / —</div>
+      <h1 class="sp-name" id="spName">—</h1>
+      <p class="sp-intro" id="spIntro"></p>
+      <p class="sp-tag" id="spTag"></p>
+
+      <div class="sp-block sp-about">
+        <h2>À propos</h2>
+        <p class="lead" id="spAbout"></p>
+        <p id="spStory"></p>
+      </div>
+
+      <div class="sp-block sp-fond" id="spFondSec">
+        <h2>Fondateurs</h2>
+        <div class="sp-fgrid" id="spFgrid"></div>
+      </div>
+    </div>
+    <aside class="sp-side">
+      <div class="sp-side-inner">
+      <div class="sp-logo"><img id="spLogo" alt=""></div>
+      <div class="sp-row"><span class="k">Site web</span><span class="v"><a id="spSite" href="#" target="_blank" rel="noopener">—</a></span></div>
+      <div class="sp-row"><span class="k">Secteur</span><span class="v" id="spCat">—</span></div>
+      <div class="sp-row"><span class="k">Statut</span><span class="v"><span class="sp-dot">Active</span></span></div>
+      <div class="sp-row"><span class="k">Studio</span><span class="v">Mstudio · Abidjan</span></div>
+      <div class="sp-row" id="spFoundersRow"><span class="k">Fondateurs</span><span class="v" id="spFoundersList"></span></div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="brand">
+        <img src="assets/logo-white.png" alt="Mstudio">
+        <p>Le venture studio mobile-first qui mène les startups d'Afrique francophone de l'idée au Seed Round.</p>
+        <div class="footer-soc">
+          <a href="https://www.linkedin.com/company/mstudiovc" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a1.94 1.94 0 1 1-3.88 0 1.94 1.94 0 0 1 3.88 0zM3.4 8.43h3.1V21H3.4V8.43zM9.2 8.43h2.97v1.72h.04c.41-.78 1.42-1.6 2.93-1.6 3.13 0 3.71 2.06 3.71 4.74V21h-3.1v-5.5c0-1.31-.02-3-1.83-3-1.83 0-2.11 1.43-2.11 2.9V21H9.2V8.43z"/></svg></a>
+          <a href="https://www.instagram.com/mstudiovc" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.youtube.com/mstudiovc" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10.5 9.2l4.2 2.8-4.2 2.8V9.2z" fill="currentColor" stroke="none"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <div class="footer-links">
+          <a href="index.html">Accueil</a>
+          <a href="a-propos.html">À propos</a>
+          <a href="startups.html">Nos startups</a>
+          <a href="cofondateur.html">Devenir cofondateur</a>
+        </div>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <div class="footer-contact">
+          <div><img src="assets/marker.svg" alt="">ITC — Ivoire Trade Center, Abidjan</div>
+          <div><img src="assets/envelope.svg" alt="">infos@mstudio.vc</div>
+        </div>
+      </div>
+      <div>
+        <h4>Newsletter</h4>
+        <div class="footer-news">
+          <form onsubmit="event.preventDefault();this.reset();">
+            <input type="email" placeholder="Votre e-mail" required>
+            <button type="submit" aria-label="S'inscrire"><svg viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg></button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bot"><span>© 2026 Mstudio. Tous droits réservés.</span><span>Abidjan · Côte d'Ivoire</span></div>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+const onScroll=()=>nav.classList.toggle('solid',window.scrollY>40);
+onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+const burger=document.getElementById('navBurger'),menu=document.getElementById('navMenu');
+burger.addEventListener('click',()=>{const o=menu.classList.toggle('open');burger.classList.toggle('open',o);});
+
+const SD={
+ waribei:{name:"Waribei",logo:"assets/startup-waribei-svg.svg",cat:"Fintech",tag:"« Nous finançons, vous vendez, vous grandissez. »",site:"https://waribei.africa",
+  about:"BNPL B2B qui finance l'inventaire des détaillants africains avec un crédit rotatif à 7 jours. Le fournisseur est payé cash à J0, le détaillant rembourse à J7 via Mobile Money.",
+  story:"Les détaillants africains fonctionnent au comptant — commandes limitées, ruptures fréquentes, marges compressées. 51 % des boutiquiers de l'informel ont besoin de financements fiables : un déficit de 60 milliards USD documenté. Waribei prend le problème par l'autre bout : trust-based lending via les recommandations des fournisseurs partenaires. Plafond initial = 30 % du panier moyen, ajusté selon l'historique. Financement assuré par des institutions de microfinance partenaires. Modèle : commission de 3 % du montant financé.",
+  founders:[{nm:"Ladislas Pham",rl:"Cofondateur & CEO",c:"France",img:"assets/fd-ladislas.png"},{nm:"Fabrice-Mozart Amani",rl:"Cofondateur & COO",c:"Côte d'Ivoire",img:"assets/fd-amani.png"}]},
+ doo:{name:"doo!",logo:"assets/startup-doo-svg.svg",cat:"Fintech",tag:"« Le digital, sans le déplacement. »",site:"https://doo.africa",
+  about:"Plateforme « Fijital » qui transforme les points Mobile Money en guichets multi-services. L'agent du quartier devient le point d'accès à une dizaine de services publics et privés.",
+  story:"Au quartier, l'agent Mobile Money est déjà le point de confiance. doo! en fait un guichet multi-services : paiements de factures, recharges, démarches administratives et services privés — sans que le client ait à se déplacer. Le « Fijital » : le meilleur du digital, porté par un humain de proximité.",
+  founders:[{nm:"Olivier Cechura",rl:"Cofondateur & CEO",c:"France",img:"assets/fd-olivier.png"},{nm:"Yannick Gouguia",rl:"Cofondateur & CTO"}]},
+ jeko:{name:"Jèko",logo:"assets/startup-jeko-svg.svg",cat:"Fintech",tag:"« Encaissez votre djè sans forcer. »",site:"https://jeko.africa",
+  about:"Solution d'encaissement tout-en-un qui agrège tous les moyens de paiement en une interface unique — pour digitaliser les commerçants et leur donner accès au crédit.",
+  story:"10 % seulement des commerçants en Côte d'Ivoire encaissent des paiements digitaux. Les 90 % restants jonglent avec 4+ solutions. 80 % n'ont pas accès au crédit faute d'historique formel. Marché : 2 millions de commerçants. La Box Jèko (terminal tout-en-un, 45 000 FCFA) accepte Mobile Money, cartes et espèces avec confirmation vocale. QR code dynamique interopérable pour 356 millions de comptes Mobile Money. L'historique généré ouvre l'accès au crédit via Advans et Baobab. Tarification : 1 % Mobile Money, 2,5 % carte bancaire.",
+  founders:[{nm:"Idriss Marcial Monthe",rl:"Cofondateur & CEO",c:"Cameroun",img:"assets/f-idriss-sm.jpg"},{nm:"Daniel Dang",rl:"Cofondateur",c:"Côte d'Ivoire",img:"assets/fd-daniel.png"}]},
+ barapay:{name:"Barapay",logo:"assets/startup-barapay-long.png",cat:"Fintech",tag:"« Chaque jour est un jour de paie. »",site:"https://barapay.africa",
+  about:"Donne aux salariés un accès instantané à leur salaire déjà gagné via une app simple, rapide et sécurisée. Élimine le stress financier et la gestion manuelle des avances.",
+  founders:[{nm:"Samuel Vicko",rl:"Cofondateur & CEO",c:"France",img:"assets/fd-samuel.png"},{nm:"Jean-Luc Gaman",rl:"Cofondateur",c:"Côte d'Ivoire",img:"assets/fd-jeanluc.png"}]},
+ flot:{name:"Flot",logo:"assets/startup-flot-svg.svg",cat:"Mobilité",tag:"« Chauffeur, deviens patron. »",site:"https://flot.africa",
+  about:"Finance les chauffeurs VTC pour acquérir leur premier véhicule électrique. Mobilité durable, propriété accessible, revenus optimisés.",
+  story:"Les chauffeurs VTC à Abidjan génèrent 100 €/jour mais ne gardent que 8 € de reste à vivre. 92 % louent informellement leur véhicule faute d'accès au crédit. Flot lance le drive-to-own : devenir propriétaire d'un véhicule électrique en 36 mois, sans apport, via un loyer journalier payé en mobile money. Le reste à vivre passe de 8 € à 20 €. Services inclus : assurance tous risques, recharge, maintenance, GPS. 75 000 chauffeurs professionnels à Abidjan en 2025 (+36 % vs 2023).",
+  founders:[{nm:"Pierre-Alexandre Assou",rl:"Cofondateur & CEO",c:"Togo",img:"assets/fd-pa.png"},{nm:"Paul Wilson",rl:"Cofondateur",c:"Congo",img:"assets/fd-paul.png"}]},
+ tajiri:{name:"Tajiri",logo:"assets/startup-tajiri-new.png",cat:"Foodtech",tag:"« Ton restaurant, dans ta poche. »",site:"https://tajiri.africa",
+  about:"Solution mobile complète pour restaurateurs africains : commandes, stock, réservations, paiements, équipes et analytics. Intégrée à Yango et Glovo.",
+  story:"Tajiri équipe les restaurateurs africains d'un système d'exploitation mobile unique pour piloter tout leur établissement — de la prise de commande à la gestion des équipes — et se connecte aux plateformes de livraison comme Yango et Glovo.",
+  founders:[]},
+ djoli:{name:"Djoli",logo:"assets/startup-djoli-svg.svg",cat:"AgriTech · Marketplace",tag:"« Des champs à l'assiette. »",site:"https://djoli.africa",
+  about:"Marketplace B2B AgriTech : produits frais livrés directement aux restaurants par les producteurs, en moins de 24 h. Moins d'intermédiaires, moins de gaspillage.",
+  story:"Les restaurateurs africains passent 600 heures/an à s'approvisionner, avec 5+ intermédiaires et 15 000 € perdus par an. Côté producteurs : 40 % de gaspillage et 0 visibilité sur les revenus futurs. Djoli connecte directement producteurs et restaurateurs : commande via app ou WhatsApp, livraison en 24 h, conventions d'achat anticipé, prévision de la demande et optimisation des routes, le tout dans un back-office intégré.",
+  founders:[{nm:"Thomas Giannetti-Fakhoury",rl:"Cofondateur & CEO",c:"Côte d'Ivoire",img:"assets/fd-thomas.png"},{nm:"Stane Blegbo",rl:"Cofondateur",c:"Côte d'Ivoire",img:"assets/fd-stane.png"}]},
+ tuzzo:{name:"Tuzzo",logo:"assets/startup-tuzzo-new.png",cat:"Social Commerce",tag:"« Vendez sur les réseaux sociaux, vendez mieux. »",site:"https://tuzzo.africa",
+  about:"Plateforme d'affiliation beauté qui permet aux créateurs et influenceurs africains de monétiser leur audience en partageant leurs produits préférés.",
+  story:"Tuzzo connecte les vendeurs aux opportunités et les laisse se concentrer sur l'essentiel : vendre sur les réseaux sociaux, vendre mieux. La plateforme évolue vers un positionnement social commerce dédié à la beauté — les créateurs et influenceurs monétisent leur audience en partageant leurs produits préférés.",
+  founders:[]},
+ blok:{name:"Blok",logo:"assets/startup-blok-svg.svg",cat:"Contech",tag:"« Construire l'Afrique de demain, avec des produits normés et de qualité. »",site:"https://blok.africa",
+  about:"Plateforme B2B qui connecte les acteurs de la construction à un réseau de fournisseurs vérifiés. Transparence des prix, qualité contrôlée, livraison en 48 h.",
+  story:"Le secteur de la construction en Afrique francophone souffre d'un manque de transparence (prix, disponibilité, données techniques), d'une absence de traçabilité de la qualité et de délais non respectés. Blok donne accès à un réseau de fournisseurs proposant des produits de qualité et d'origine contrôlée, avec une meilleure maîtrise des livraisons. Point d'entrée : les quincailleries. État en février 2026 : +3 000 commandes livrées, 300+ commandes/mois.",
+  founders:[{nm:"Yohann Behi",rl:"Cofondateur & CEO",c:"Côte d'Ivoire",img:"assets/fd-yohann.png"},{nm:"Waly K. N'Diaye",rl:"Cofondateur",c:"Sénégal",img:"assets/fd-waly.png"}]},
+ danaya:{name:"Danaya",logo:"assets/startup-danaya-svg.svg",cat:"Regtech",tag:"« Conformité simple, sécurité renforcée. »",site:"https://danaya.africa",
+  about:"Solution KYC/KYB/AML qui permet aux institutions financières et entreprises de gérer leur conformité quasi instantanément. La regtech qui simplifie la vie des équipes réglementées d'Afrique francophone.",
+  story:"Le KYC/KYB en Afrique francophone est encore un processus 100 % manuel : jusqu'à 2 semaines pour un KYC en Côte d'Ivoire, documents papier, erreurs de saisie. 83 % des entreprises ont besoin d'un outil comme Danaya. Plateforme SaaS/API : KYC en quelques secondes (CNI, passeport, permis), KYB (dirigeants, statuts, historique), AML (alertes sanctions, listes PEP), FaceMatch (reconnaissance faciale + liveness + OCR). Intégration via API ou app mobile, alignée BCEAO.",
+  founders:[{nm:"Gauthier de Gerlache",rl:"Cofondateur & CEO",c:"Belgique",img:"assets/fd-gauthier.png"},{nm:"Michel Edjoa",rl:"Cofondateur & CTO"}]},
+ revvo:{name:"Revvo",logo:"assets/startup-revvo-svg.svg",cat:"Greentech",tag:"« Le haut de gamme, reconditionné. »",site:"https://revvo.africa",
+  about:"Spécialiste du reconditionné haut de gamme : smartphones fiables à prix accessibles, B2B et B2C. L'économie circulaire pour les appareils électroniques d'Afrique de l'Ouest.",
+  story:"En Afrique de l'Ouest, le smartphone neuf reste hors de portée pour beaucoup, et l'occasion rime avec risque. Revvo professionnalise le reconditionné haut de gamme : appareils testés, garantis, accessibles — pour les particuliers comme pour les entreprises. L'économie circulaire, sans le compromis sur la qualité.",
+  founders:[{nm:"Galliam Bagaya",rl:"Cofondateur & CEO",c:"Burkina Faso"},{nm:"Franck-Olivier Kadio",rl:"Cofondateur"}]},
+};
+
+function get(id){return SD[id]||SD[Object.keys(SD)[0]];}
+const params=new URLSearchParams(location.search);
+const d=get((params.get('id')||'').toLowerCase());
+document.title=d.name+" — Mstudio";
+// back navigation based on origin (accueil vs nos startups)
+const cameFromHome=/\/(index\.html)?(\?|#|$)/.test(document.referrer) && !/startups\.html/.test(document.referrer);
+const backHref=cameFromHome?'index.html':'startups.html';
+const backLabel=cameFromHome?'Accueil':'Startups';
+document.querySelector('.sp-back').setAttribute('href',backHref);
+document.getElementById('spCrumb').innerHTML='<a href="'+backHref+'" style="color:inherit">'+backLabel+'</a> / '+d.name;
+document.getElementById('spName').textContent=d.name;
+document.getElementById('spIntro').textContent=d.about;
+const tg=document.getElementById('spTag'); if(d.tag){tg.textContent=d.tag;}else{tg.style.display='none';}
+document.getElementById('spLogo').src=d.logo;
+document.getElementById('spLogo').alt=d.name;
+const site=document.getElementById('spSite'); site.href=d.site; site.textContent=d.site.replace(/^https?:\/\//,'');
+document.getElementById('spCat').textContent=d.cat;
+document.getElementById('spAbout').textContent=d.about;
+document.getElementById('spStory').textContent=d.story||"";
+
+// country -> flag emoji
+const FLAG={"France":"🇫🇷","Côte d'Ivoire":"🇨🇮","Cameroun":"🇨🇲","Sénégal":"🇸🇳","Togo":"🇹🇬","Congo":"🇨🇬","Belgique":"🇧🇪","Burkina Faso":"🇧🇫"};
+function flag(c){return c&&FLAG[c]?FLAG[c]:'';}
+// sidebar founders list
+const fl=document.getElementById('spFoundersList');
+if(d.founders&&d.founders.length){ fl.innerHTML=d.founders.map(f=>'<span class="ln">'+f.nm+(f.c?' '+flag(f.c):'')+'</span>').join(''); }
+else { document.getElementById('spFoundersRow').style.display='none'; }
+
+// founders grid
+const fg=document.getElementById('spFgrid');
+if(d.founders&&d.founders.length){
+  fg.innerHTML=d.founders.map(f=>'<div class="sp-fcard"><div class="ph">'+(f.img?'<img src="'+f.img+'" alt="'+f.nm+'">':'')+'</div><div class="nm">'+f.nm+'</div><div class="rl">'+f.rl+'</div></div>').join('');
+} else {
+  document.getElementById('spFondSec').style.display='none';
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Devenir cofondateur — Mstudio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="v2.css?v=47">
+<style>
+.cf-hero{position:relative;background:var(--space);color:#fff;padding:150px 0 0;overflow:hidden;}
+.cf-hero .hero-glow{position:absolute;width:700px;height:700px;border-radius:50%;filter:blur(120px);opacity:.3;pointer-events:none;}
+.cf-hero .g1{background:var(--ocean);top:-220px;left:-160px;}
+.cf-hero .g2{background:var(--ciel);bottom:-300px;right:-120px;opacity:.2;}
+.cf-hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+.cf-hero h1{font-size:clamp(36px,4.6vw,64px);font-weight:800;margin:0;}
+.cf-hero h1 .tint{background:linear-gradient(100deg,var(--ciel),var(--ocean));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;}
+.cf-hero p{font-size:18px;color:#c5cbe6;margin:24px 0 0;max-width:46ch;line-height:1.6;}
+.cf-hero .btn{margin-top:32px;}
+.cf-collage{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;}
+.cf-collage img{width:100%;aspect-ratio:1/1.1;object-fit:cover;border-radius:14px;}
+.cf-collage .span2{grid-column:span 2;aspect-ratio:auto;height:100%;}
+.cf-hero-arcs{position:relative;align-self:stretch;min-height:540px;display:flex;align-items:flex-end;justify-content:center;}
+.cf-hero-arcs .cf-slide{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:auto;height:520px;max-width:none;object-fit:contain;object-position:bottom;opacity:0;transition:opacity 1.8s var(--ease);pointer-events:none;}
+.cf-hero-arcs .cf-slide.on{opacity:1;}
+
+.cf-stats{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;}
+.cf-stats .big{font-family:'Funnel Display';font-weight:800;font-size:clamp(34px,4.4vw,52px);line-height:1.05;letter-spacing:-0.02em;color:var(--space);}
+.cf-stats .big .tint{color:var(--ocean);}
+.cf-stats p{color:var(--slate);font-size:17px;margin:18px 0 0;line-height:1.6;}
+.cf-card{background:var(--bone);border:1px solid var(--line);border-radius:18px;padding:34px;}
+.cf-card h4{margin:0 0 18px;font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--ocean);}
+.cf-row{display:flex;justify-content:space-between;padding:12px 0;border-top:1px solid var(--line);font-size:16px;}
+.cf-row:first-of-type{border-top:none;}
+.cf-row b{color:var(--space);}
+.risk-flow{display:flex;flex-direction:column;align-items:stretch;gap:0;position:relative;}
+.risk-box{background:#fff;border-radius:100px;padding:16px 24px;text-align:center;font-weight:700;font-size:14px;color:var(--space);box-shadow:0 8px 20px -12px rgba(3,4,94,.25);}
+.risk-step{display:flex;align-items:center;justify-content:center;gap:12px;padding:10px 0;}
+.risk-step svg{width:22px;height:22px;}
+.risk-step span{color:var(--azur);font-weight:700;font-size:15px;}
+.risk-result{display:flex;align-items:flex-start;gap:14px;margin-top:22px;padding-top:22px;border-top:1px solid rgba(3,4,94,.1);}
+.risk-result .rp{font-family:'Funnel Display';font-weight:800;font-size:46px;line-height:1;color:var(--space);}
+.risk-result p{margin:0;font-size:14px;color:var(--slate);line-height:1.45;max-width:24ch;}
+
+.steps6{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:20px;overflow:hidden;}
+.st6{background:#fff;padding:36px 30px;transition:background .3s;}
+.st6:hover{background:var(--bone);}
+.st6 .no{width:38px;height:38px;border-radius:50%;background:var(--ocean);color:#fff;font-family:'Funnel Display';font-weight:800;display:grid;place-items:center;margin-bottom:18px;}
+.st6 h3{font-size:21px;font-weight:700;margin:0 0 10px;}
+.st6 p{font-size:15px;color:var(--slate);margin:0;line-height:1.55;}
+
+.soft{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.soft h2{font-size:clamp(30px,4vw,48px);font-weight:800;margin:0 0 20px;}
+.soft p{color:var(--slate);font-size:17px;line-height:1.6;}
+.soft img{width:100%;border-radius:200px 200px 20px 20px;object-fit:cover;aspect-ratio:4/3.6;}
+
+.faq-wrap{max-width:880px;margin:0 auto;}
+.faq{border:1px solid var(--line);border-radius:14px;margin-bottom:12px;overflow:hidden;background:#fff;}
+.faq summary{list-style:none;cursor:pointer;padding:22px 26px;display:flex;align-items:center;gap:16px;font-weight:600;font-size:19px;color:var(--space);}
+.faq summary::-webkit-details-marker{display:none;}
+.faq .qn{flex:0 0 auto;width:32px;height:32px;border-radius:50%;background:var(--bone);color:var(--ocean);font-family:'Funnel Display';font-weight:800;font-size:14px;display:grid;place-items:center;}
+.faq .chev{margin-left:auto;width:26px;height:26px;border-radius:50%;background:var(--ocean);display:grid;place-items:center;transition:transform .3s;}
+.faq .chev svg{width:14px;height:14px;stroke:#fff;fill:none;stroke-width:2.4;}
+.faq[open] .chev{transform:rotate(45deg);}
+.faq p{margin:0;padding:0 26px 24px 72px;color:var(--slate);font-size:18px;line-height:1.65;}
+
+@media(max-width:900px){
+  .cf-hero-grid,.cf-stats,.soft{grid-template-columns:1fr;gap:36px;}
+  .cf-hero-arcs{display:none;}
+  .steps6{grid-template-columns:1fr;}
+  .soft img{border-radius:120px 120px 16px 16px;}
+}
+@media(max-width:600px){
+  .cf-hero{padding:130px 0 0;}
+  .cf-hero .btn,.soft .btn{width:100%;max-width:360px;}
+  .cf-card{padding:26px 20px;}
+  .cf-row{font-size:14px;}
+  .faq summary{padding:18px;font-size:17px;gap:12px;}
+  .faq p{padding:0 18px 20px 18px;font-size:16px;}
+}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="nav-logo" href="index.html"><img class="logo-white" src="assets/logo-white.png" alt="Mstudio"><img class="logo-color" src="assets/logo-color.png" alt="Mstudio"></a>
+    <nav class="nav-menu" id="navMenu">
+      <a href="index.html">Accueil</a>
+      <a href="a-propos.html">À propos</a>
+      <a href="startups.html">Nos startups</a>
+      <a href="cofondateur.html" class="active m-only btn btn-accent" style="margin-top:8px;justify-content:center;">Deviens cofondateur</a>
+    </nav>
+    <div class="nav-right">
+      <a href="#postuler" class="btn btn-cofounder" style="font-size: 18px; padding: 17px 30px; height: 50px; letter-spacing: 1px">Deviens cofondateur</a>
+      <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<section class="cf-hero">
+  <div class="hero-glow g1"></div>
+  <div class="hero-glow g2"></div>
+  <div class="wrap cf-hero-grid">
+    <div>
+      <h1 class="disp reveal">Ton aventure de cofondateur <span class="tint">commence ici</span></h1>
+      <p class="reveal d1">Mstudio, c'est <span style="color:var(--ciel)">le meilleur soft landing pour un entrepreneur à expérience internationale</span> qui veut lancer sa startup en Afrique francophone.</p>
+      <a href="#postuler" class="btn btn-accent reveal d2">Postuler</a>
+    </div>
+    <div class="cf-hero-arcs reveal d1">
+      <img class="cf-slide on" src="assets/cf-1.png" alt="">
+      <img class="cf-slide" src="assets/cf-2.png" alt="">
+      <img class="cf-slide" src="assets/cf-3.png" alt="">
+      <img class="cf-slide" src="assets/cf-4.png" alt="">
+      <img class="cf-slide" src="assets/cf-5.png" alt="">
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap cf-stats">
+    <div class="reveal">
+      <div class="big disp">Tu fais ta levée de fonds <span class="tint">2x plus vite</span></div>
+      <p><b>Le startup studio est un modèle éprouvé globalement</b>, qui propulse les startups à devenir des entreprises autonomes deux fois plus vite que la moyenne.</p>
+    </div>
+    <div class="cf-card reveal d1" style="background:#EAF1FB;border-color:transparent;">
+      <h4 style="color:var(--space);font-size:20px;font-family:'Funnel Display';font-weight:800;text-transform:none;letter-spacing:-0.01em;">Time-to-market : 2× plus rapide</h4>
+      <div class="cf-row" style="color:var(--azur);font-size:14px;text-transform:none;font-weight:700;border-top:none;"><span></span><span style="display:flex;gap:24px;"><b style="width:78px;text-align:right;color:var(--azur);">Sans studio</b><b style="width:70px;text-align:right;color:var(--azur);">Avec un studio</b></span></div>
+      <div class="cf-row"><span>De 0 au Seed <small style="color:var(--mut)">(mois)</small></span><span style="display:flex;gap:24px;"><b style="width:78px;text-align:right;">36</b><b style="width:70px;text-align:right;">10,7</b></span></div>
+      <div class="cf-row"><span>Du Seed à la Série A <small style="color:var(--mut)">(mois)</small></span><span style="display:flex;gap:24px;"><b style="width:78px;text-align:right;">20</b><b style="width:70px;text-align:right;">14,5</b></span></div>
+      <div class="cf-row"><span>De 0 à la Série A <small style="color:var(--mut)">(mois)</small></span><span style="display:flex;gap:24px;"><b style="width:78px;text-align:right;">56</b><b style="width:70px;text-align:right;">25,2</b></span></div>
+      <p style="margin:16px 0 0;font-size:12px;color:var(--mut);">Source : Global Startup Studio Network.</p>
+    </div>
+  </div>
+
+  <div class="wrap cf-stats" style="margin-top:40px;">
+    <div class="cf-card reveal" style="background:#EAF6F2;border-color:transparent;">
+      <h4 style="color:var(--space);font-size:20px;font-family:'Funnel Display';font-weight:800;text-transform:none;letter-spacing:-0.01em;margin-bottom:24px;">Risque : −30 %</h4>
+      <div class="risk-flow">
+        <div class="risk-box">Les startups issues d'un studio</div>
+        <div class="risk-step"><svg viewBox="0 0 24 24" fill="none" stroke="var(--azur)" stroke-width="2"><path d="M12 5v14M6 13l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>84 %</span></div>
+        <div class="risk-box">atteignent le Seed</div>
+        <div class="risk-step"><svg viewBox="0 0 24 24" fill="none" stroke="var(--azur)" stroke-width="2"><path d="M12 5v14M6 13l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>72 %</span></div>
+        <div class="risk-box">atteignent la Série A</div>
+        <div class="risk-result"><div class="rp">60 %</div><p>des startups de studio atteignent la Série A, soit 30 % de plus que les startups classiques.</p></div>
+      </div>
+      <p style="margin:18px 0 0;font-size:12px;color:var(--mut);">Source : Global Startup Studio Network.</p>
+    </div>
+    <div class="reveal d1">
+      <div class="big disp">On dérisque de <span class="tint">30 % ta Série A</span></div>
+      <p>Avec un studio, une startup a 30 % de chances en plus d'atteindre sa Série A.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section bone">
+  <div class="wrap">
+    <div class="shead center reveal"><h2 class="disp">Voici ce que c'est que de cofonder avec nous</h2></div>
+    <div class="steps6">
+      <div class="st6 reveal"><div class="no">1</div><h3>Deviens cofondateur</h3><p>Une fois ta candidature déposée via notre page carrière, nous évaluerons la possibilité de travailler ensemble.</p></div>
+      <div class="st6 reveal d1"><div class="no">2</div><h3>On t'apporte l'idée</h3><p>Nous effectuons des recherches approfondies pour générer des idées de startup en nous inspirant de business modèles éprouvés d'Afrique anglophone. Nous te présentons nos idées et nous trouvons ensemble celle qui correspond le mieux à tes compétences et à ta motivation.</p></div>
+      <div class="st6 reveal d2"><div class="no">3</div><h3>Participe à l'EIR</h3><p>Rejoins pendant trois mois notre programme d'Entrepreneur in residence qui te permet de valider l'idée, construire ton pitch deck et ton prototype. Tu dois trouver ton cofondateur CEO ou CTO/COO d'ici la fin du programme. On t'aidera en te présentant des profils et on te soutiendra tout au long du processus pour s'assurer que vous êtes un bon match.</p></div>
+      <div class="st6 reveal"><div class="no">4</div><h3>Pitch au comité d'investissement</h3><p>Maintenant que tu as l'idée et ton deuxième cofondateur, il est temps de présenter devant le comité d'investissement ton pitch deck ainsi que ton business plan sur trois ans pour ta startup. À la fin de ton pitch, le comité valide ou non ton entrée dans Mstudio.</p></div>
+      <div class="st6 reveal d1"><div class="no">5</div><h3>Lance ta startup</h3><p>Si tu as le Go du comité d'investissement, tu entres officiellement dans le studio. Pendant un an, tu travailles main dans la main avec une dizaine d'experts opérationnels qui t'aideront à développer ton produit, atteindre le product market fit et scaler tes revenus, etc.</p></div>
+      <div class="st6 reveal d2"><div class="no">6</div><h3>Deviens autonome</h3><p>Après 12 mois, tu es prêt à quitter le nid ! Nous t'aidons à lever un tour de table seed auprès de notre réseau d'investisseurs. Tu deviens indépendant du studio sur le plan opérationnel et financier. Mais nous ne serons jamais trop loin, tu deviendras un membre à vie de la communauté Mstudio.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap soft">
+    <div class="reveal">
+      <h2 class="disp">Le meilleur soft landing pour ton retour en Afrique</h2>
+      <p>Tu fais partie de la diaspora africaine ? Tu as bâti une expérience internationale dans les meilleures écoles et entreprises ? On t'accompagne — financièrement et opérationnellement — pour rentrer au pays et entreprendre.</p>
+      <a href="#postuler" class="btn btn-accent" style="margin-top:24px;">Postuler</a>
+    </div>
+    <img class="reveal d1" src="assets/bureaux.png" alt="Les bureaux Mstudio à Abidjan" style="border-radius: 1000px 1000px 0px 0px">
+  </div>
+</section>
+
+<section class="section bone">
+  <div class="wrap">
+    <div class="shead center reveal"><h2 class="disp">Un pays en pleine croissance</h2></div>
+    <div class="soft">
+      <img class="reveal" src="assets/abidjan-bridge.png" alt="Le pont d'Abidjan" style="border-radius: 1000px 1000px 0px 0px">
+      <div class="reveal d1">
+        <h2 class="disp" style="font-size:clamp(26px,3.2vw,40px);">Pourquoi la Côte d'Ivoire ?</h2>
+        <p>La Côte d'Ivoire, c'est 40 % du PIB de la sous-région et une croissance annuelle moyenne proche de 7 % entre 2022 et 2025, ce qui lui confère la place de pays le plus riche de l'UEMOA.<br><br>C'est une économie en marche avec une forte richesse en ressources naturelles, des infrastructures modernes, une classe moyenne grandissante, et un large secteur informel qui ne demande qu'à être transformé.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="shead center reveal"><h2 class="disp">Zoom sur Abidjan</h2></div>
+    <div class="soft">
+      <div class="reveal">
+        <h2 class="disp" style="font-size:clamp(26px,3.2vw,40px);">Le Miami d'Afrique</h2>
+        <p><em>Akwaaba !</em> Abidjan n'a rien à envier aux plus grandes capitales du monde. La Côte d'Ivoire a énormément à offrir humainement et culturellement. Avec plus de 60 ethnies dont l'hospitalité n'est plus à présenter, le pays regorge de coutumes, mets gastronomiques, destinations touristiques… qui séduisent.</p>
+        <p style="margin-top:16px;">Il y fait bon vivre ! La population est cosmopolite et internationale. Quant à la ville, elle offre un cadre de vie facile et commode, avec des enseignes, loisirs, écoles et hôpitaux de standard international. Babi est doux et reste <span style="color:var(--ocean);font-style:italic;">the capital of Enjoyment</span> de l'Afrique !</p>
+      </div>
+      <img class="reveal d1" src="assets/abidjan-night.jpg" alt="Abidjan, le Miami d'Afrique" style="border-radius: 1000px 1000px 0px 0px">
+    </div>
+  </div>
+</section>
+
+<section class="section bone">
+  <div class="wrap">
+    <div class="shead center reveal"><h2 class="disp">FAQ</h2></div>
+    <div class="faq-wrap">
+      <details class="faq reveal"><summary><span class="qn">1</span>Pourquoi rejoindre un startup studio ?<span class="chev"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>Le modèle de startup studio existe depuis des décennies. Il s'exporte de plus en plus vers l'Afrique car il a fait ses preuves en Europe et aux Etats-Unis.</p><img src="assets/faq-unicorns.png" alt="Les Startup studios : une fabrique à licornes" style="width:100%;max-width:680px;margin:18px auto 4px;display:block;"></details>
+      <details class="faq reveal"><summary><span class="qn">2</span>Comment le studio se positionne par rapport aux cofondateurs ?<span class="chev"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>Une fois que la startup entre officiellement dans le studio, nous devenons le troisième co-fondateur "institutionnel". En échange de l'accompagnement que nous apportons à la startup, nous prenons une participation dans son capital.</p></details>
+      <details class="faq reveal"><summary><span class="qn">3</span>Quelles sont les grandes étapes du studio ?<span class="chev"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>Le cofondateur rejoint premièrement notre programme d'Entrepreneur in residence (EIR) qui dure trois mois. À la fin de ce dernier, il pitche devant le comité d'investissement (IC) qui donne son GO ou NO GO. En cas de GO, la startup est incorporée et entre officiellement dans Mstudio. Une fois dans le studio, la première année est dédiée au développement du MVP et l'atteinte du Product Market Fit.</p><img src="assets/faq-3.png" alt="" style="width:100%;max-width:680px;margin:18px auto 4px;display:block;border-radius:8px;"></details>
+      <details class="faq reveal"><summary><span class="qn">4</span>Comment participer au programme Entrepreneur in residence ou EIR ?<span class="chev"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>Il suffit de postuler pour devenir cofondateur CEO ou CTO/COO via notre page carrière. Si ton profil correspond à nos critères, notre équipe de recrutement te contactera pour t'inviter à un entretien préliminaire, qui sera suivi d'une épreuve de pitch.</p></details>
+      <details class="faq reveal"><summary><span class="qn">5</span>Quels sont les objectifs de l'EIR ?<span class="chev"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>Durant les trois mois d'EIR, les entrepreneurs doivent réaliser une étude comparative des meilleures startups dans leur domaine à l'international pour s'en inspirer, valider l'idée auprès de clients finaux, développer une proposition de valeur, construire un pitch deck, un business plan, tester un prototype et développer un MVP.</p><img src="assets/faq-5.png" alt="" style="width:100%;max-width:680px;margin:18px auto 4px;display:block;border-radius:8px;"></details>
+      <details class="faq reveal"><summary><span class="qn">6</span>Qui est à l'origine de l'idée ?<span class="chev"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>Mstudio source des idées de modèles économiques à succès d'Afrique anglophone, et les réplique en Afrique francophone. Très souvent, une startup qui a levé plus de 3M € en Afrique anglophone a un équivalent en Amérique latine ou Asie du Sud-Est ayant levé encore plus d'argent. Cela confirme que la startup en question traite bel et bien un sujet éprouvé que l'on peut facilement adapter aux réalités de l'Afrique francophone.</p><img src="assets/faq-6.png" alt="" style="width:100%;max-width:680px;margin:18px auto 4px;display:block;border-radius:8px;"></details>
+      <details class="faq reveal"><summary><span class="qn">7</span>Comment la core team intervient dans les projets ?<span class="chev"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>Le développement du produit et sa commercialisation restent au sein de la startup, et sont la responsabilité des co-fondateurs CEO et CTO/COO. La core team de Mstudio vient en renfort pour accélérer la croissance de la startup sur les sujets suivants : UI/UX design, produit & architecture, recrutement, comptabilité, fundraising, marketing digital, etc.</p><img src="assets/faq-7.png" alt="" style="width:100%;max-width:680px;margin:18px auto 4px;display:block;border-radius:8px;"></details>
+      <details class="faq reveal"><summary><span class="qn">8</span>Doit on rester un an au sein du studio ?<span class="chev"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>Nous pensons que douze mois sont nécessaires pour emmener la startup à atteindre un bon niveau de croissance et devenir autonome. Néanmoins, il peut y avoir des exceptions.</p></details>
+      <details class="faq reveal"><summary><span class="qn">9</span>Quel est l'investissement du Mstudio ?<span class="chev"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>Durant l'EIR, Mstudio prend en charge à hauteur de 15 000 € les dépenses opérationnelles de la startup. Cela inclut une aide aux frais de nourriture, transport et logement pour les cofondateurs. Les détails précis te seront communiqués lors d'un appel avec notre équipe de recrutement. Par ailleurs, chaque cofondateur est responsable du paiement des frais d'incorporation pour sa startup, qui s'élèvent à 1 500 €. Ce montant est dû entre la première et la deuxième semaine d'EIR. Post comité d'investissement, Mstudio investit 250 000 € par an et par startup, en nature, en échange d'une prise de participation de 25 %. Ce montant est valorisé fois deux, soit 500 000 €.</p></details>
+      <details class="faq reveal"><summary><span class="qn">10</span>Qui est le sidecar fund du studio ?<span class="chev"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>Le Sidecar fund du studio est un VC international avec la capacité financière pour accompagner nos startups sur deux ans. Celui-ci investit en cash 250 000 € dans chaque startup en échange d'une prise de participation de 12,5 %.</p></details>
+      <details class="faq reveal"><summary><span class="qn">11</span>Est-ce que les cofondateurs ont des parts équivalentes ?<span class="chev"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>Nous suggérons fortement que les deux cofondateurs aient chacun 50% des parts au démarrage, car c'est l'exécution et l'engagement sur le long-terme qui comptent.</p></details>
+      <details class="faq reveal"><summary><span class="qn">12</span>Quel est le taux de succès de Mstudio ?<span class="chev"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>Les startups qui ressortent de studios ont globalement un taux de succès moyen de 60 % (source : Global Startup Studio Network).</p><img src="assets/faq-12.png" alt="" style="width:100%;max-width:680px;margin:18px auto 4px;display:block;border-radius:8px;"></details>
+      <details class="faq reveal"><summary><span class="qn">13</span>Qu'est ce qui arrive si un des deux cofondateurs quitte le projet ?<span class="chev"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>Le deuxième co-fondateur restant est libre de poursuivre le projet. Il suffit alors de recruter un cofondateur pour remplacer celui qui sort. Les termes de Mstudio protègent le projet en premier.</p></details>
+      <details class="faq reveal"><summary><span class="qn">14</span>Quelle est la position du Mstudio après l'année d'accompagnement ?<span class="chev"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>Une fois que la startup a levé son Seed, elle devient une startup tout à fait « normale » et sort du studio. Les fondateurs sont aux commandes, ils disposent d'un conseil d'administration composé des fondateurs et des principaux investisseurs, dont Mstudio. Au fur et à mesure que la startup se développe, l'équipe s'agrandit également. À mesure que la consommation de trésorerie augmente, la startup doit généralement lever des tours de financement supplémentaires, souvent auprès de sociétés de capital-risque (séries A, B, C...). En général, les startups ne sont pas rentables pendant longtemps, car elles ont tendance à investir beaucoup dans la croissance de la boite (par exemple en embauchant des ingénieurs, des commerciaux, du marketing, etc.). À noter que Mstudio continue d'accompagner stratégiquement sur toute future levée de fonds. Mstudio reste actionnaire jusqu'à une « sortie », un rachat de parts, la société est vendue, ou cotée sur un marché public.</p></details>
+      <details class="faq reveal"><summary><span class="qn">15</span>Peut-on avoir un seul fondateur par startup ?<span class="chev"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>Non, nous croyons fortement que l'entrepreneuriat n'est pas une aventure solitaire. C'est ensemble en collaborant que nous allons plus loin !</p></details>
+      <details class="faq reveal"><summary><span class="qn">16</span>Pourquoi Mstudio est-il un « soft landing » pour la diaspora africaine ?<span class="chev"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>C'est le cadre idéal pour se lancer dans l'entrepreneuriat en Afrique francophone à moindre risque. Nous accompagnons nos entrepreneurs autant financièrement qu'opérationnellement à réussir sur le marché d'Afrique francophone.</p></details>
+      <details class="faq reveal"><summary><span class="qn">17</span>Peut-on faire Mstudio en étant hors d'Abidjan ?<span class="chev"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>Non, il faut vivre ou se relocaliser à Abidjan pour participer à Mstudio.</p></details>
+      <details class="faq reveal"><summary><span class="qn">18</span>Pourquoi Abidjan ?<span class="chev"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>Notre marché cible c'est l'UEMOA. Pour commencer, nous choisissons de nous lancer premièrement en Côte d'Ivoire, qui est le pays le plus riche de la sous-région mais aussi celui où Mstudio est implanté. Par la suite, nos startups vont scaler géographiquement sur le reste de l'UEMOA et de l'Afrique francophone de manière large. L'avantage clé de l'UEMOA est le fait que la sous-région a une langue et une monnaie unique.</p><img src="assets/faq-18.png" alt="" style="width:100%;max-width:680px;margin:18px auto 4px;display:block;border-radius:8px;"></details>
+      <details class="faq reveal"><summary><span class="qn">19</span>Doit-on être Africain pour rejoindre Mstudio ?<span class="chev"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>Pas du tout ! Nous souhaitons que chaque cohorte d'entrepreneurs soit diverse et variée en origine, background et expertise.</p></details>
+      <details class="faq reveal"><summary><span class="qn">20</span>Doit-on parler français pour rejoindre Mstudio ?<span class="chev"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>Oui. Nos startups servent le secteur informel d'Afrique francophone : parler français est indispensable pour comprendre le terrain et tes utilisateurs.</p></details>
+      <details class="faq reveal"><summary><span class="qn">21</span>Est ce que les cofondateurs sont payés durant les 12 mois ?<span class="chev"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>Les cofondateurs reçoivent un salaire décent en tant qu'employé de leur startup.</p></details>
+      <details class="faq reveal"><summary><span class="qn">22</span>Quelle est la différence entre un startup studio, un VC, un incubateur, un accélérateur ou un business angel ?<span class="chev"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>Les startup studios s'impliquent dans le début du processus de création des startups et s'occupent de leur apporter du capital financier et humain, c'est-à-dire un capital d'amorçage, qui est alloué à chaque projet en fonction de ses besoins, en plus d'un espace de travail, de différents outils, et même des collaborateurs qui travaillent sur les différents projets. En échange, le studio prend une participation dans le capital de la startup.</p><img src="assets/faq-22.png" alt="" style="width:100%;max-width:680px;margin:18px auto 4px;display:block;border-radius:8px;"></details>
+      <details class="faq reveal"><summary><span class="qn">23</span>Quel est le focus de Mstudio ?<span class="chev"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>Nous travaillons sur des solutions digitales qui transforment le secteur informel en Afrique francophone en utilisant l'interface mobile. Les startups que nous lançons ont des business models B2B ou B2B2C.</p><img src="assets/faq-23.png" alt="" style="width:100%;max-width:680px;margin:18px auto 4px;display:block;border-radius:8px;"></details>
+      <details class="faq reveal"><summary><span class="qn">24</span>Comment les startups de Mstudio sont-elles structurées ?<span class="chev"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>Nos startups sont toutes incorporées au Delaware. La structure au Delaware devient alors la holding de la filiale en Côte d'Ivoire.</p></details>
+      <details class="faq reveal"><summary><span class="qn">25</span>Au total, la startup cède 37,5 % de parts, cela en vaut-il la peine ?<span class="chev"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>Oui, et voici pourquoi. On finance tout pendant les 12 premiers mois : salaire minimum viable pour les fondateurs et les premières recrues, plus tous les coûts d'amorçage de ta startup. On apporte aussi une équipe d'une dizaine d'experts dédiés à ton projet — ce qu'aucune autre structure n'offre aujourd'hui. Tu n'es pas une petite équipe de fondateurs, mais une grande équipe prête à donner vie à ton projet. Résultat : tu passes de l'idée au MVP, à tes premiers clients et à ta levée bien plus vite. Et au-delà de la vitesse, c'est une question de profondeur : mentorat, accès à un vaste réseau et accompagnement concret sur la stratégie, le produit et l'entrée sur le marché. Les 37,5 % de parts (25 % pour Mstudio et 12,5 % pour l'investisseur partenaire) reflètent cet engagement envers ta réussite. Et surtout : tu restes majoritaire, avec plus de 60 % des parts.</p></details>
+      <details class="faq reveal"><summary><span class="qn">26</span>Combien de cofondateurs sont intégrés chaque année ?<span class="chev"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>Chez Mstudio, nous croyons qu'il faut cultiver le potentiel et favoriser l'esprit d'entreprise. Chaque année, environ 1 500 aspirants entrepreneurs nous contactent. Parmi eux, nous sélectionnons en moyenne 20 fondateurs (deux par projet), sur trois critères : l'ambition, l'humilité et la capacité d'exécution. Notre objectif est de trouver la meilleure adéquation entre ta vision et notre expertise — en donnant à chacun une chance équitable et en misant sur celui qui, selon nous, a le plus grand potentiel pour réussir dans le monde stimulant des startups.</p></details>
+      <details class="faq reveal"><summary><span class="qn">27</span>Comment se déroule le quotidien de la startup ?<span class="chev"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>La startup travaillera tous les jours depuis nos bureaux, littéralement assise sur le même banc aux côtés de la core team du Mstudio. Cela signifie que nous travaillons ensemble et interagissons au quotidien sur tous les sujets : produit, design, recrutement, go-to-market, levée de fonds, gestion d'équipe, etc. Pour garantir que nous gardons le bon rythme de livraison et que tout le monde soit sur la même longueur d'onde, nous avons une organisation de sprint hebdomadaire qui s'applique à tous les sujets (produit bien sûr, mais aussi business, go-to-market, etc). Ces sprints sont soutenus par des routines hebdomadaires : kick-offs, mid-week check-ins, weekly reviews, etc, ainsi que des réunions ad hoc pour approfondir des questions spécifiques. Nous avons une réunion bimestrielle appelée Demo day, où chaque projet fait une présentation à l'équipe Mstudio et à toutes les autres équipes de startup pour prendre du recul sur leur avancement et définir la roadmap à 2 mois.</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="postuler" style="padding:0;">
+  <div class="cta cta-flush reveal">
+    <img class="side-pat right" src="assets/pat-equite.svg" alt="" style="opacity:.07;width:90%;height:auto;right:auto;left:50%;top:auto;bottom:-30%;transform:translateX(-50%) rotate(-90deg);transform-origin:center;">
+    <h2 class="disp">Prêt <span class="tint">à relever</span> le défi ?</h2>
+    <p class="cta-sub">Le prochain grand entrepreneur d'Afrique francophone, c'est peut-être toi.</p>
+    <div class="cta-actions">
+      <a href="https://mstudio.recruitee.com" target="_blank" rel="noopener" class="btn btn-accent">Postuler comme cofondateur</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="brand">
+        <img src="assets/logo-white.png" alt="Mstudio">
+        <p>Le venture studio mobile-first qui mène les startups d'Afrique francophone de l'idée au Seed Round.</p>
+        <div class="footer-soc">
+          <a href="https://www.linkedin.com/company/mstudiovc" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a1.94 1.94 0 1 1-3.88 0 1.94 1.94 0 0 1 3.88 0zM3.4 8.43h3.1V21H3.4V8.43zM9.2 8.43h2.97v1.72h.04c.41-.78 1.42-1.6 2.93-1.6 3.13 0 3.71 2.06 3.71 4.74V21h-3.1v-5.5c0-1.31-.02-3-1.83-3-1.83 0-2.11 1.43-2.11 2.9V21H9.2V8.43z"/></svg></a>
+          <a href="https://www.instagram.com/mstudiovc" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.youtube.com/mstudiovc" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10.5 9.2l4.2 2.8-4.2 2.8V9.2z" fill="currentColor" stroke="none"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <div class="footer-links">
+          <a href="index.html">Accueil</a>
+          <a href="a-propos.html">À propos</a>
+          <a href="startups.html">Nos startups</a>
+          <a href="cofondateur.html">Devenir cofondateur</a>
+        </div>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <div class="footer-contact">
+          <div><img src="assets/marker.svg" alt="">ITC — Ivoire Trade Center, Abidjan</div>
+          <div><img src="assets/envelope.svg" alt="">infos@mstudio.vc</div>
+        </div>
+      </div>
+      <div>
+        <h4>Newsletter</h4>
+        <div class="footer-news">
+          <form onsubmit="event.preventDefault();this.reset();">
+            <input type="email" placeholder="Votre e-mail" required>
+            <button type="submit" aria-label="S'inscrire"><svg viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg></button>
+          </form>
+          <p style="color:#8b91bb;font-size:14px;margin-top:14px;">Le terrain, le mobile et l'impact — une fois par mois.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bot">
+      <span>© 2026 Mstudio. Tous droits réservés.</span>
+      <span>Abidjan · Côte d'Ivoire</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+const onScroll=()=>nav.classList.toggle('solid',window.scrollY>40);
+onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+const burger=document.getElementById('navBurger'),menu=document.getElementById('navMenu');
+burger.addEventListener('click',()=>{const o=menu.classList.toggle('open');burger.classList.toggle('open',o);});
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');burger.classList.remove('open');}));
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.1,rootMargin:'0px 0px -6% 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+(function(){
+  const slides=document.querySelectorAll('.cf-hero-arcs .cf-slide');
+  if(!slides.length) return;
+  let i=0;
+  setInterval(()=>{
+    slides[i].classList.remove('on');
+    i=(i+1)%slides.length;
+    slides[i].classList.add('on');
+  },3400);
+})();
+</script>
+</body>
+</html>

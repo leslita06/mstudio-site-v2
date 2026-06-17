@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Nos startups — Mstudio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="v2.css?v=47">
+<style>
+/* ===== NOS STARTUPS (V2) ===== */
+.su-hero{position:relative;background:var(--space);color:#fff;padding:160px 0 90px;overflow:hidden;}
+.su-hero .hero-glow{position:absolute;width:720px;height:720px;border-radius:50%;filter:blur(120px);opacity:.3;pointer-events:none;}
+.su-hero .g1{background:var(--ocean);top:-220px;left:-160px;}
+.su-hero .g2{background:var(--ciel);bottom:-300px;right:-120px;opacity:.2;}
+.su-hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr 0.9fr;gap:50px;align-items:center;}
+.su-hero-text h1,.su-hero-text p,.su-hero-text .eyebrow{max-width:60ch;}
+.su-hero-circle{display:flex;justify-content:center;align-items:center;}
+.su-hero-arcs{position:relative;display:flex;justify-content:center;align-items:center;min-height:420px;}
+.su-hero-arcs .pat{position:absolute;right:-140px;top:50%;transform:translateY(-50%);width:560px;max-width:none;height:auto;opacity:.07;pointer-events:none;}
+.su-hero-arcs .constellation{position:relative;z-index:2;width:100%;max-width:480px;height:auto;animation:constFloat 6s ease-in-out infinite;transform-origin:center;}
+@keyframes constFloat{0%,100%{transform:translateY(0) rotate(0deg);}50%{transform:translateY(-16px) rotate(2deg);}}
+@media(prefers-reduced-motion:reduce){.su-hero-arcs .constellation{animation:none;}}
+@media(max-width:900px){.su-hero-inner{grid-template-columns:1fr;gap:30px;}.su-hero-arcs .pat{display:none;}.su-hero-arcs{min-height:auto;}.su-hero-arcs .constellation{max-width:360px;}}
+.su-hero h1{font-size:clamp(40px,5.4vw,76px);font-weight:800;margin:22px 0 0;}
+.su-hero h1 .tint{background:linear-gradient(100deg,var(--ciel),var(--ocean));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;}
+.su-hero p{font-size:19px;color:#c5cbe6;margin:26px 0 0;line-height:1.6;}
+
+.cat-tabs{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 50px;}
+.cat-tab{padding:10px 20px;font-weight:600;font-size:14px;color:var(--slate);cursor:pointer;border:1px solid var(--line);border-radius:100px;background:#fff;transition:all .2s;}
+.cat-tab.active{color:#fff;background:var(--space);border-color:var(--space);}
+.cat-tab:hover:not(.active){border-color:var(--space);color:var(--space);}
+
+.su-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.su-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:20px;padding:32px;transition:transform .3s var(--ease),box-shadow .3s,border-color .3s;overflow:hidden;}
+.su-card::after{content:"";position:absolute;right:-50px;bottom:-50px;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle,rgba(56,182,171,.14),transparent 70%);opacity:0;transition:opacity .3s;}
+.su-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent;}
+.su-card:hover::after{opacity:1;}
+.su-logo{height:52px;display:flex;align-items:center;margin-bottom:24px;}
+.su-logo img{max-height:46px;max-width:150px;object-fit:contain;}
+.su-card .tag{position:absolute;top:26px;right:26px;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ocean);}
+.su-card h3{display:none;}
+.su-card .su-logo{margin-bottom:18px;}
+.su-card p{color:var(--slate);font-size:15px;line-height:1.55;margin:0;}
+
+@media(max-width:1080px){.su-grid{grid-template-columns:repeat(2,1fr);}}
+
+@media(max-width:680px){
+  .su-hero{padding:130px 0 70px;}
+  .su-grid{grid-template-columns:1fr;}
+  .cat-tabs{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:4px;}
+  .cat-tab{white-space:nowrap;}
+  .su-hero-arcs{display:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="nav-logo" href="index.html"><img class="logo-white" src="assets/logo-white.png" alt="Mstudio"><img class="logo-color" src="assets/logo-color.png" alt="Mstudio"></a>
+    <nav class="nav-menu" id="navMenu">
+      <a href="index.html">Accueil</a>
+      <a href="a-propos.html">À propos</a>
+      <a href="startups.html" class="active">Nos startups</a>
+      <a href="cofondateur.html" class="m-only btn btn-accent" style="margin-top:8px;justify-content:center;">Deviens cofondateur</a>
+    </nav>
+    <div class="nav-right">
+      <a href="cofondateur.html" class="btn btn-cofounder" style="font-size: 18px; padding: 17px 30px; height: 50px; letter-spacing: 1px">Deviens cofondateur</a>
+      <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="su-hero">
+  <div class="hero-glow g1"></div>
+  <div class="hero-glow g2"></div>
+  <div class="wrap su-hero-inner">
+    <div class="su-hero-text">
+      <span class="eyebrow c-ocean reveal" style="display:none;">Le portfolio</span>
+      <h1 class="disp reveal d1">Toutes les <span class="tint">startups</span></h1>
+      <p class="reveal d2">L'Afrique avance au rythme du mobile. Nos startups construisent des produits pensés pour ces usages-là — simples, accessibles, sur le terrain.</p>
+    </div>
+    <div class="su-hero-arcs reveal d2">
+      <img class="pat" src="assets/pat-equite.svg" alt="">
+      <img class="constellation" src="assets/startups-constellation.png" alt="Les startups Mstudio">
+    </div>
+  </div>
+</section>
+
+<!-- GRID -->
+<section class="section">
+  <div class="wrap">
+    <div class="cat-tabs reveal">
+      <div class="cat-tab active" data-cat="all">Toutes les startups</div>
+      <div class="cat-tab" data-cat="commerce">Social Commerce</div>
+      <div class="cat-tab" data-cat="foodtech">Foodtech</div>
+      <div class="cat-tab" data-cat="fintech">Fintech</div>
+      <div class="cat-tab" data-cat="marketplace">Marketplace</div>
+      <div class="cat-tab" data-cat="contech">Contech</div>
+      <div class="cat-tab" data-cat="mobility">Mobilité</div>
+      <div class="cat-tab" data-cat="regtech">Regtech</div>
+      <div class="cat-tab" data-cat="greentech">Greentech</div>
+    </div>
+    <div class="su-grid" id="grid">
+      <a class="su-card reveal" data-cat="fintech" href="startup.html?id=waribei"><span class="tag">Fintech</span><div class="su-logo"><img src="assets/startup-waribei-svg.svg" alt="Waribei"></div><h3>Waribei</h3><p>Plateforme mobile de microfinance qui débloque le crédit de stock en temps réel entre grossistes et détaillants. Le fonds de roulement du commerce informel, accessible sans cash.</p></a>
+      <a class="su-card reveal" data-cat="fintech" href="startup.html?id=doo"><span class="tag">Fintech</span><div class="su-logo"><img src="assets/startup-doo-svg.svg" alt="doo!"></div><h3>doo!</h3><p>Transforme les points Mobile Money en mini-centres de services locaux : paiements, recharges, services numériques accessibles dans chaque quartier.</p></a>
+      <a class="su-card reveal" data-cat="fintech" href="startup.html?id=jeko"><span class="tag">Fintech</span><div class="su-logo"><img src="assets/startup-jeko-svg.svg" alt="Jèko"></div><h3>Jèko</h3><p>Solution d'encaissement qui agrège tous les moyens de paiement en une interface unique — pour digitaliser les commerçants et leur donner accès au crédit.</p></a>
+      <a class="su-card reveal" data-cat="fintech" href="startup.html?id=barapay"><span class="tag">Fintech</span><div class="su-logo"><img src="assets/startup-barapay-long.png" alt="Barapay"></div><h3>Barapay</h3><p>Donne aux salariés un accès instantané à leur salaire déjà gagné via une app simple, rapide et sécurisée. Élimine le stress financier et la gestion manuelle des avances.</p></a>
+      <a class="su-card reveal" data-cat="mobility" href="startup.html?id=flot"><span class="tag">Mobilité</span><div class="su-logo"><img src="assets/startup-flot-svg.svg" alt="Flot"></div><h3>Flot</h3><p>Finance les chauffeurs VTC pour acquérir leur premier véhicule électrique. Mobilité durable, propriété accessible, revenus optimisés.</p></a>
+      <a class="su-card reveal" data-cat="foodtech" href="startup.html?id=tajiri"><span class="tag">Foodtech</span><div class="su-logo"><img src="assets/startup-tajiri-new.png" alt="Tajiri"></div><h3>Tajiri</h3><p>Solution mobile complète pour restaurateurs africains : commandes, stock, réservations, paiements, équipes et analytics. Intégrée à Yango et Glovo.</p></a>
+      <a class="su-card reveal" data-cat="marketplace" href="startup.html?id=djoli"><span class="tag">AgriTech · Marketplace</span><div class="su-logo"><img src="assets/startup-djoli-svg.svg" alt="Djoli"></div><h3>Djoli</h3><p>Marketplace B2B AgriTech : produits frais livrés directement aux restaurants par les producteurs, en moins de 24 h. Moins d'intermédiaires, moins de gaspillage.</p></a>
+      <a class="su-card reveal" data-cat="commerce" href="startup.html?id=tuzzo"><span class="tag">Social Commerce</span><div class="su-logo"><img src="assets/startup-tuzzo-new.png" alt="Tuzzo"></div><h3>Tuzzo</h3><p>Plateforme d'affiliation beauté qui permet aux créateurs et influenceurs africains de monétiser leur audience en partageant leurs produits préférés.</p></a>
+      <a class="su-card reveal" data-cat="contech" href="startup.html?id=blok"><span class="tag">Contech</span><div class="su-logo"><img src="assets/startup-blok-svg.svg" alt="Blok"></div><h3>Blok</h3><p>Plateforme B2B qui connecte les acteurs de la construction à un réseau de fournisseurs vérifiés. Transparence des prix, qualité contrôlée, livraison en 48 h.</p></a>
+      <a class="su-card reveal" data-cat="regtech" href="startup.html?id=danaya"><span class="tag">Regtech</span><div class="su-logo"><img src="assets/startup-danaya-svg.svg" alt="Danaya"></div><h3>Danaya</h3><p>Solution KYC/KYB/AML qui permet aux institutions financières et entreprises de gérer leur conformité quasi instantanément. La regtech qui simplifie la vie des équipes réglementées d'Afrique francophone.</p></a>
+      <a class="su-card reveal" data-cat="greentech" href="startup.html?id=revvo"><span class="tag">Greentech</span><div class="su-logo"><img src="assets/startup-revvo-svg.svg" alt="Revvo"></div><h3>Revvo</h3><p>Spécialiste du reconditionné haut de gamme : smartphones fiables à prix accessibles, B2B et B2C. L'économie circulaire pour les appareils électroniques d'Afrique de l'Ouest.</p></a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta" style="padding:0;">
+  <div class="cta cta-flush reveal">
+    <img class="side-pat right" src="assets/pat-equite.svg" alt="" style="opacity:.07;width:90%;height:auto;right:auto;left:50%;top:auto;bottom:-30%;transform:translateX(-50%) rotate(-90deg);transform-origin:center;">
+    <h2 class="disp">Construisons la prochaine grande startup. <span class="tint">Ensemble.</span></h2>
+    <p class="cta-sub">De l'idée au Seed Round, on co-fonde à tes côtés.</p>
+    <div class="cta-actions">
+      <a href="cofondateur.html" class="btn btn-accent">Postuler comme cofondateur</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="brand">
+        <img src="assets/logo-white.png" alt="Mstudio">
+        <p>Le venture studio mobile-first qui mène les startups d'Afrique francophone de l'idée au Seed Round.</p>
+        <div class="footer-soc">
+          <a href="https://www.linkedin.com/company/mstudiovc" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a1.94 1.94 0 1 1-3.88 0 1.94 1.94 0 0 1 3.88 0zM3.4 8.43h3.1V21H3.4V8.43zM9.2 8.43h2.97v1.72h.04c.41-.78 1.42-1.6 2.93-1.6 3.13 0 3.71 2.06 3.71 4.74V21h-3.1v-5.5c0-1.31-.02-3-1.83-3-1.83 0-2.11 1.43-2.11 2.9V21H9.2V8.43z"/></svg></a>
+          <a href="https://www.instagram.com/mstudiovc" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.youtube.com/mstudiovc" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10.5 9.2l4.2 2.8-4.2 2.8V9.2z" fill="currentColor" stroke="none"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <div class="footer-links">
+          <a href="index.html">Accueil</a>
+          <a href="a-propos.html">À propos</a>
+          <a href="startups.html">Nos startups</a>
+        </div>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <div class="footer-contact">
+          <div><img src="assets/marker.svg" alt="">ITC — Ivoire Trade Center, Abidjan</div>
+          <div><img src="assets/envelope.svg" alt="">infos@mstudio.vc</div>
+        </div>
+      </div>
+      <div>
+        <h4>Newsletter</h4>
+        <div class="footer-news">
+          <form onsubmit="event.preventDefault();this.reset();">
+            <input type="email" placeholder="Votre e-mail" required>
+            <button type="submit" aria-label="S'inscrire"><svg viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg></button>
+          </form>
+          <p style="color:#8b91bb;font-size:14px;margin-top:14px;">Le terrain, le mobile et l'impact — une fois par mois.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bot">
+      <span>© 2026 Mstudio. Tous droits réservés.</span>
+      <span>Abidjan · Côte d'Ivoire</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+const onScroll=()=>nav.classList.toggle('solid',window.scrollY>40);
+onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+const burger=document.getElementById('navBurger'),menu=document.getElementById('navMenu');
+burger.addEventListener('click',()=>{const o=menu.classList.toggle('open');burger.classList.toggle('open',o);});
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');burger.classList.remove('open');}));
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.1,rootMargin:'0px 0px -6% 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+document.querySelectorAll('.cat-tab').forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    document.querySelectorAll('.cat-tab').forEach(x=>x.classList.remove('active'));
+    tab.classList.add('active');
+    const c=tab.dataset.cat;
+    document.querySelectorAll('.su-card').forEach(card=>{
+      card.style.display=(c==='all'||card.dataset.cat===c)?'':'none';
+    });
+  });
+});
+
+</script>
+</body>
+</html>
