@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Startup — Mstudio</title>
+<title>Startup · Mstudio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="v2.css?v=48">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
@@ -65,6 +65,7 @@ body{background:var(--space);overflow-x:clip;}
       <a href="index.html">Accueil</a>
       <a href="a-propos.html">À propos</a>
       <a href="startups.html">Nos startups</a>
+      <a href="cofondateur.html">Cofondateur</a>
       <a href="https://mstudio.recruitee.com" target="_blank" rel="noopener" class="m-only btn btn-accent" style="margin-top:8px;justify-content:center;">Deviens cofondateur</a>
     </nav>
     <div class="nav-right">
@@ -79,8 +80,8 @@ body{background:var(--space);overflow-x:clip;}
   <div class="wrap sp-grid">
     <div class="sp-main">
       <a class="sp-back" href="startups.html" aria-label="Retour"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg></a>
-      <div class="sp-crumb" id="spCrumb"><a href="startups.html" style="color:inherit">Startups</a> / —</div>
-      <h1 class="sp-name" id="spName">—</h1>
+      <div class="sp-crumb" id="spCrumb"><a href="startups.html" style="color:inherit">Startups</a> / …</div>
+      <h1 class="sp-name" id="spName">…</h1>
       <p class="sp-intro" id="spIntro"></p>
       <p class="sp-tag" id="spTag"></p>
 
@@ -98,8 +99,8 @@ body{background:var(--space);overflow-x:clip;}
     <aside class="sp-side">
       <div class="sp-side-inner">
       <div class="sp-logo"><img id="spLogo" alt=""></div>
-      <div class="sp-row"><span class="k">Site web</span><span class="v"><a id="spSite" href="#" target="_blank" rel="noopener">—</a></span></div>
-      <div class="sp-row"><span class="k">Secteur</span><span class="v" id="spCat">—</span></div>
+      <div class="sp-row"><span class="k">Site web</span><span class="v"><a id="spSite" href="#" target="_blank" rel="noopener">…</a></span></div>
+      <div class="sp-row"><span class="k">Secteur</span><span class="v" id="spCat">…</span></div>
       <div class="sp-row"><span class="k">Statut</span><span class="v"><span class="sp-dot">Active</span></span></div>
       <div class="sp-row"><span class="k">Studio</span><span class="v">Mstudio · Abidjan</span></div>
       <div class="sp-row" id="spFoundersRow"><span class="k">Fondateurs</span><span class="v" id="spFoundersList"></span></div>
@@ -126,13 +127,13 @@ body{background:var(--space);overflow-x:clip;}
           <a href="index.html">Accueil</a>
           <a href="a-propos.html">À propos</a>
           <a href="startups.html">Nos startups</a>
-          <a href="https://mstudio.recruitee.com" target="_blank" rel="noopener">Devenir cofondateur</a>
+          <a href="cofondateur.html">Devenir cofondateur</a>
         </div>
       </div>
       <div>
         <h4>Contact</h4>
         <div class="footer-contact">
-          <div><img src="assets/marker.svg" alt="">ITC — Ivoire Trade Center, Abidjan</div>
+          <div><img src="assets/marker.svg" alt="">Rez-de-chaussée de la tour D, Ivoire Trade Center (ITC), Cocody, Abidjan</div>
           <div><img src="assets/envelope.svg" alt="">infos@mstudio.vc</div>
         </div>
       </div>
@@ -160,14 +161,14 @@ burger.addEventListener('click',()=>{const o=menu.classList.toggle('open');burge
 const SD={
  waribei:{name:"Waribei",logo:"assets/startup-waribei-svg.svg",cat:"Fintech",tag:"« Nous finançons, vous vendez, vous grandissez. »",site:"https://waribei.africa",
   about:"BNPL B2B qui finance l'inventaire des détaillants africains avec un crédit rotatif à 7 jours. Le fournisseur est payé cash à J0, le détaillant rembourse à J7 via Mobile Money.",
-  story:"Les détaillants africains fonctionnent au comptant — commandes limitées, ruptures fréquentes, marges compressées. 51 % des boutiquiers de l'informel ont besoin de financements fiables : un déficit de 60 milliards USD documenté. Waribei prend le problème par l'autre bout : trust-based lending via les recommandations des fournisseurs partenaires. Plafond initial = 30 % du panier moyen, ajusté selon l'historique. Financement assuré par des institutions de microfinance partenaires. Modèle : commission de 3 % du montant financé.",
+  story:"Les détaillants africains fonctionnent au comptant : commandes limitées, ruptures fréquentes, marges compressées. 51 % des boutiquiers de l'informel ont besoin de financements fiables : un déficit de 60 milliards USD documenté. Waribei prend le problème par l'autre bout : trust-based lending via les recommandations des fournisseurs partenaires. Plafond initial = 30 % du panier moyen, ajusté selon l'historique. Financement assuré par des institutions de microfinance partenaires. Modèle : commission de 3 % du montant financé.",
   founders:[{nm:"Ladislas Pham",rl:"Cofondateur & CEO",c:"France",img:"assets/fd-ladislas.png"},{nm:"Fabrice-Mozart Amani",rl:"Cofondateur & COO",c:"Côte d'Ivoire",img:"assets/fd-amani.png"}]},
  doo:{name:"doo!",logo:"assets/startup-doo-svg.svg",cat:"Fintech",tag:"« Le digital, sans le déplacement. »",site:"https://doo.africa",
   about:"Plateforme « Fijital » qui transforme les points Mobile Money en guichets multi-services. L'agent du quartier devient le point d'accès à une dizaine de services publics et privés.",
-  story:"Au quartier, l'agent Mobile Money est déjà le point de confiance. doo! en fait un guichet multi-services : paiements de factures, recharges, démarches administratives et services privés — sans que le client ait à se déplacer. Le « Fijital » : le meilleur du digital, porté par un humain de proximité.",
+  story:"Au quartier, l'agent Mobile Money est déjà le point de confiance. doo! en fait un guichet multi-services : paiements de factures, recharges, démarches administratives et services privés, sans que le client ait à se déplacer. Le « Fijital » : le meilleur du digital, porté par un humain de proximité.",
   founders:[{nm:"Olivier Cechura",rl:"Cofondateur & CEO",c:"France",img:"assets/fd-olivier.png"},{nm:"Yannick Gouguia",rl:"Cofondateur & CTO"}]},
  jeko:{name:"Jèko",logo:"assets/startup-jeko-svg.svg",cat:"Fintech",tag:"« Encaissez votre djè sans forcer. »",site:"https://jeko.africa",
-  about:"Solution d'encaissement tout-en-un qui agrège tous les moyens de paiement en une interface unique — pour digitaliser les commerçants et leur donner accès au crédit.",
+  about:"Solution d'encaissement tout-en-un qui agrège tous les moyens de paiement en une interface unique, pour digitaliser les commerçants et leur donner accès au crédit.",
   story:"10 % seulement des commerçants en Côte d'Ivoire encaissent des paiements digitaux. Les 90 % restants jonglent avec 4+ solutions. 80 % n'ont pas accès au crédit faute d'historique formel. Marché : 2 millions de commerçants. La Box Jèko (terminal tout-en-un, 45 000 FCFA) accepte Mobile Money, cartes et espèces avec confirmation vocale. QR code dynamique interopérable pour 356 millions de comptes Mobile Money. L'historique généré ouvre l'accès au crédit via Advans et Baobab. Tarification : 1 % Mobile Money, 2,5 % carte bancaire.",
   founders:[{nm:"Idriss Marcial Monthe",rl:"Cofondateur & CEO",c:"Cameroun",img:"assets/f-idriss-sm.jpg"},{nm:"Daniel Dang",rl:"Cofondateur",c:"Côte d'Ivoire",img:"assets/fd-daniel.png"}]},
  barapay:{name:"Barapay",logo:"assets/startup-barapay-long.png",cat:"Fintech",tag:"« Chaque jour est un jour de paie. »",site:"https://barapay.africa",
@@ -179,7 +180,7 @@ const SD={
   founders:[{nm:"Pierre-Alexandre Assou",rl:"Cofondateur & CEO",c:"Togo",img:"assets/fd-pa.png"},{nm:"Paul Wilson",rl:"Cofondateur",c:"Congo",img:"assets/fd-paul.png"}]},
  tajiri:{name:"Tajiri",logo:"assets/startup-tajiri-new.png",cat:"Foodtech",tag:"« Ton restaurant, dans ta poche. »",site:"https://tajiri.africa",
   about:"Solution mobile complète pour restaurateurs africains : commandes, stock, réservations, paiements, équipes et analytics. Intégrée à Yango et Glovo.",
-  story:"Tajiri équipe les restaurateurs africains d'un système d'exploitation mobile unique pour piloter tout leur établissement — de la prise de commande à la gestion des équipes — et se connecte aux plateformes de livraison comme Yango et Glovo.",
+  story:"Tajiri équipe les restaurateurs africains d'un système d'exploitation mobile unique pour piloter tout leur établissement, de la prise de commande à la gestion des équipes, et se connecte aux plateformes de livraison comme Yango et Glovo.",
   founders:[]},
  djoli:{name:"Djoli",logo:"assets/startup-djoli-svg.svg",cat:"AgriTech",tag:"« Des champs à l'assiette. »",site:"https://djoli.africa",
   about:"Marketplace B2B AgriTech : produits frais livrés directement aux restaurants par les producteurs, en moins de 24 h. Moins d'intermédiaires, moins de gaspillage.",
@@ -187,7 +188,7 @@ const SD={
   founders:[{nm:"Thomas Giannetti-Fakhoury",rl:"Cofondateur & CEO",c:"Côte d'Ivoire",img:"assets/fd-thomas.png"},{nm:"Stane Blegbo",rl:"Cofondateur",c:"Côte d'Ivoire",img:"assets/fd-stane.png"}]},
  tuzzo:{name:"Tuzzo",logo:"assets/startup-tuzzo-new.png",cat:"Social Commerce",tag:"« Vendez sur les réseaux sociaux, vendez mieux. »",site:"https://tuzzo.africa",
   about:"Plateforme d'affiliation beauté qui permet aux créateurs et influenceurs africains de monétiser leur audience en partageant leurs produits préférés.",
-  story:"Tuzzo connecte les vendeurs aux opportunités et les laisse se concentrer sur l'essentiel : vendre sur les réseaux sociaux, vendre mieux. La plateforme évolue vers un positionnement social commerce dédié à la beauté — les créateurs et influenceurs monétisent leur audience en partageant leurs produits préférés.",
+  story:"Tuzzo connecte les vendeurs aux opportunités et les laisse se concentrer sur l'essentiel : vendre sur les réseaux sociaux, vendre mieux. La plateforme évolue vers un positionnement social commerce dédié à la beauté : les créateurs et influenceurs monétisent leur audience en partageant leurs produits préférés.",
   founders:[]},
  blok:{name:"Blok",logo:"assets/startup-blok-svg.svg",cat:"Contech",tag:"« Construire l'Afrique de demain, avec des produits normés et de qualité. »",site:"https://blok.africa",
   about:"Plateforme B2B qui connecte les acteurs de la construction à un réseau de fournisseurs vérifiés. Transparence des prix, qualité contrôlée, livraison en 48 h.",
@@ -199,14 +200,14 @@ const SD={
   founders:[{nm:"Gauthier de Gerlache",rl:"Cofondateur & CEO",c:"Belgique",img:"assets/fd-gauthier.png"},{nm:"Michel Edjoa",rl:"Cofondateur & CTO"}]},
  revvo:{name:"Revvo",logo:"assets/startup-revvo-svg.svg",cat:"Greentech",tag:"« Le haut de gamme, reconditionné. »",site:"https://revvo.africa",
   about:"Spécialiste du reconditionné haut de gamme : smartphones fiables à prix accessibles, B2B et B2C. L'économie circulaire pour les appareils électroniques d'Afrique de l'Ouest.",
-  story:"En Afrique de l'Ouest, le smartphone neuf reste hors de portée pour beaucoup, et l'occasion rime avec risque. Revvo professionnalise le reconditionné haut de gamme : appareils testés, garantis, accessibles — pour les particuliers comme pour les entreprises. L'économie circulaire, sans le compromis sur la qualité.",
+  story:"En Afrique de l'Ouest, le smartphone neuf reste hors de portée pour beaucoup, et l'occasion rime avec risque. Revvo professionnalise le reconditionné haut de gamme : appareils testés, garantis, accessibles, pour les particuliers comme pour les entreprises. L'économie circulaire, sans le compromis sur la qualité.",
   founders:[{nm:"Galliam Bagaya",rl:"Cofondateur & CEO",c:"Burkina Faso"},{nm:"Franck-Olivier Kadio",rl:"Cofondateur"}]},
 };
 
 function get(id){return SD[id]||SD[Object.keys(SD)[0]];}
 const params=new URLSearchParams(location.search);
 const d=get((params.get('id')||'').toLowerCase());
-document.title=d.name+" — Mstudio";
+document.title=d.name+" · Mstudio";
 // back navigation based on origin (accueil vs nos startups)
 const cameFromHome=/\/(index\.html)?(\?|#|$)/.test(document.referrer) && !/startups\.html/.test(document.referrer);
 const backHref=cameFromHome?'index.html':'startups.html';

@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>À propos — Mstudio</title>
+<title>À propos · Mstudio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="v2.css?v=47">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
@@ -84,6 +84,26 @@
   .app-tabs{overflow-x:auto;flex-wrap:nowrap;white-space:nowrap;-webkit-overflow-scrolling:touch;}
   .gssn{gap:30px;}
 }
+
+/* Reseau (section 4) */
+.net-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.net-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:34px 30px;display:flex;flex-direction:column;gap:13px;transition:transform .3s var(--ease),box-shadow .3s var(--ease);}
+.net-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(3,4,94,.08);}
+.net-card .net-eye{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#38B6AB;font-weight:700;}
+.net-card h3{color:var(--space);font-size:22px;font-weight:700;margin:0;}
+.net-card p{color:var(--slate);font-size:15.5px;line-height:1.62;margin:0;}
+/* Ce que nous apportons (section 5) */
+.val-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;}
+.val-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px 22px;}
+.val-card .val-n{font-family:'Funnel Display';font-weight:800;font-size:clamp(40px,4vw,56px);line-height:.95;color:var(--ocean);letter-spacing:-0.02em;}
+.val-card h4{color:var(--space);font-size:15px;font-weight:700;margin:12px 0 8px;text-transform:uppercase;letter-spacing:.04em;}
+.val-card p{color:var(--slate);font-size:14px;line-height:1.55;margin:0;}
+/* Sections feature (bureaux / methodo) */
+.feat-text h2{margin-top:0;}
+.feat-text p{color:var(--slate);font-size:17px;line-height:1.72;margin-top:14px;}
+.feat-num{font-family:'Funnel Display';font-weight:800;font-size:clamp(52px,7vw,84px);color:var(--ocean);line-height:.9;letter-spacing:-0.03em;margin-top:14px;}
+@media(max-width:1080px){.net-grid{grid-template-columns:1fr;}.val-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:600px){.val-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -96,6 +116,7 @@
       <a href="index.html">Accueil</a>
       <a href="a-propos.html" class="active">À propos</a>
       <a href="startups.html">Nos startups</a>
+      <a href="cofondateur.html">Cofondateur</a>
       <a href="https://mstudio.recruitee.com" target="_blank" rel="noopener" class="m-only btn btn-accent" style="margin-top:8px;justify-content:center;">Deviens cofondateur</a>
     </nav>
     <div class="nav-right">
@@ -114,7 +135,7 @@
       <span class="eyebrow c-ocean reveal" style="display:none;">À propos</span>
       <h1 class="disp reveal d1">Entrepreneurs <span class="tint">pour</span> entrepreneurs</h1>
       <p class="reveal d2">Nous sommes des entrepreneurs internationaux dans la tech qui utilisons notre expérience pour accompagner d'autres entrepreneurs.</p>
-      <p class="reveal d2">Nous sommes trois cofondateurs : <b>Leslie Ossété</b>, qui connaît le secteur informel de l'intérieur ; <b>Cédric Mangaud</b>, expert de la technologie mobile ; et <b>Clyde Fakhoury</b>, qui ouvre les portes du capital industriel et financier africain.</p>
+      <p class="reveal d2">Nous sommes trois cofondateurs. <b>Leslie Ossété</b>, sa connaissance intime du secteur informel. <b>Cédric Mangaud</b>, son ADN produit mobile. <b>Clyde Fakhoury</b>, son expertise de l'investissement en Afrique.</p>
       <a href="#cta" class="btn btn-accent reveal d3">Rejoins-nous</a>
     </div>
     <div class="ap-hero-photo reveal d2"><img src="assets/fondateurs.png" alt="Les cofondateurs"></div>
@@ -151,7 +172,8 @@
     <div class="team-grid">
       <div class="team-card reveal"><div class="ph"><img src="assets/team-cedric.jpg" alt=""><a class="li" href="https://www.linkedin.com/in/cedricmangaud/" target="_blank" rel="noopener" aria-label="LinkedIn"><span><svg viewBox="0 0 24 24"><path d="M6.94 5a1.94 1.94 0 1 1-3.88 0 1.94 1.94 0 0 1 3.88 0zM3.4 8.43h3.1V21H3.4V8.43zM9.2 8.43h2.97v1.72h.04c.41-.78 1.42-1.6 2.93-1.6 3.13 0 3.71 2.06 3.71 4.74V21h-3.1v-5.5c0-1.31-.02-3-1.83-3-1.83 0-2.11 1.43-2.11 2.9V21H9.2V8.43z"/></svg></span></a></div><h4>Cédric Mangaud</h4><div class="role">Cofondateur &amp; CEO</div></div>
       <div class="team-card reveal"><div class="ph"><img src="assets/team-leslie.jpg" alt=""><a class="li" href="https://www.linkedin.com/in/leslieossete/" target="_blank" rel="noopener" aria-label="LinkedIn"><span><svg viewBox="0 0 24 24"><path d="M6.94 5a1.94 1.94 0 1 1-3.88 0 1.94 1.94 0 0 1 3.88 0zM3.4 8.43h3.1V21H3.4V8.43zM9.2 8.43h2.97v1.72h.04c.41-.78 1.42-1.6 2.93-1.6 3.13 0 3.71 2.06 3.71 4.74V21h-3.1v-5.5c0-1.31-.02-3-1.83-3-1.83 0-2.11 1.43-2.11 2.9V21H9.2V8.43z"/></svg></span></a></div><h4>Leslie Ossété</h4><div class="role">Cofondatrice &amp; COO</div></div>
-      <div class="team-card reveal"><div class="ph"><img src="assets/team-aude.jpg" alt=""><a class="li" href="https://www.linkedin.com/in/aude-juglard-0932b483/" target="_blank" rel="noopener" aria-label="LinkedIn"><span><svg viewBox="0 0 24 24"><path d="M6.94 5a1.94 1.94 0 1 1-3.88 0 1.94 1.94 0 0 1 3.88 0zM3.4 8.43h3.1V21H3.4V8.43zM9.2 8.43h2.97v1.72h.04c.41-.78 1.42-1.6 2.93-1.6 3.13 0 3.71 2.06 3.71 4.74V21h-3.1v-5.5c0-1.31-.02-3-1.83-3-1.83 0-2.11 1.43-2.11 2.9V21H9.2V8.43z"/></svg></span></a></div><h4>Aude Juglard</h4><div class="role">Directrice financière (CFO)</div></div>
+      <div class="team-card reveal"><div class="ph"><img src="assets/team-aude.jpg" alt=""><a class="li" href="https://www.linkedin.com/in/aude-juglard-0932b483/" target="_blank" rel="noopener" aria-label="LinkedIn"><span><svg viewBox="0 0 24 24"><path d="M6.94 5a1.94 1.94 0 1 1-3.88 0 1.94 1.94 0 0 1 3.88 0zM3.4 8.43h3.1V21H3.4V8.43zM9.2 8.43h2.97v1.72h.04c.41-.78 1.42-1.6 2.93-1.6 3.13 0 3.71 2.06 3.71 4.74V21h-3.1v-5.5c0-1.31-.02-3-1.83-3-1.83 0-2.11 1.43-2.11 2.9V21H9.2V8.43z"/></svg></span></a></div><h4>Aude Juglard</h4><div class="role">Head of Corporate Finance</div></div>
+      <div class="team-card reveal"><div class="ph"><img src="assets/team-lea.jpg" alt=""><a class="li" href="https://www.linkedin.com/in/leagnaly/" target="_blank" rel="noopener" aria-label="LinkedIn"><span><svg viewBox="0 0 24 24"><path d="M6.94 5a1.94 1.94 0 1 1-3.88 0 1.94 1.94 0 0 1 3.88 0zM3.4 8.43h3.1V21H3.4V8.43zM9.2 8.43h2.97v1.72h.04c.41-.78 1.42-1.6 2.93-1.6 3.13 0 3.71 2.06 3.71 4.74V21h-3.1v-5.5c0-1.31-.02-3-1.83-3-1.83 0-2.11 1.43-2.11 2.9V21H9.2V8.43z"/></svg></span></a></div><h4>Léa Gnaly</h4><div class="role">Head of Legal</div></div>
       <div class="team-card reveal"><div class="ph"><img src="assets/team-khader.jpg" alt=""><a class="li" href="https://www.linkedin.com/in/abdoul-khader-k-k/" target="_blank" rel="noopener" aria-label="LinkedIn"><span><svg viewBox="0 0 24 24"><path d="M6.94 5a1.94 1.94 0 1 1-3.88 0 1.94 1.94 0 0 1 3.88 0zM3.4 8.43h3.1V21H3.4V8.43zM9.2 8.43h2.97v1.72h.04c.41-.78 1.42-1.6 2.93-1.6 3.13 0 3.71 2.06 3.71 4.74V21h-3.1v-5.5c0-1.31-.02-3-1.83-3-1.83 0-2.11 1.43-2.11 2.9V21H9.2V8.43z"/></svg></span></a></div><h4>Abdoul-Khader Koné</h4><div class="role">Contrôleur comptable</div></div>
       <div class="team-card reveal"><div class="ph"><img src="assets/team-rayann.jpg" alt=""><a class="li" href="https://www.linkedin.com/in/aimedjimdalmeida7/" target="_blank" rel="noopener" aria-label="LinkedIn"><span><svg viewBox="0 0 24 24"><path d="M6.94 5a1.94 1.94 0 1 1-3.88 0 1.94 1.94 0 0 1 3.88 0zM3.4 8.43h3.1V21H3.4V8.43zM9.2 8.43h2.97v1.72h.04c.41-.78 1.42-1.6 2.93-1.6 3.13 0 3.71 2.06 3.71 4.74V21h-3.1v-5.5c0-1.31-.02-3-1.83-3-1.83 0-2.11 1.43-2.11 2.9V21H9.2V8.43z"/></svg></span></a></div><h4>Rayann Dalmeida</h4><div class="role">Analyste financier</div></div>
       <div class="team-card reveal"><div class="ph"><img src="assets/team-andrea.jpg" alt=""><a class="li" href="https://www.linkedin.com/in/andreambuyamba/" target="_blank" rel="noopener" aria-label="LinkedIn"><span><svg viewBox="0 0 24 24"><path d="M6.94 5a1.94 1.94 0 1 1-3.88 0 1.94 1.94 0 0 1 3.88 0zM3.4 8.43h3.1V21H3.4V8.43zM9.2 8.43h2.97v1.72h.04c.41-.78 1.42-1.6 2.93-1.6 3.13 0 3.71 2.06 3.71 4.74V21h-3.1v-5.5c0-1.31-.02-3-1.83-3-1.83 0-2.11 1.43-2.11 2.9V21H9.2V8.43z"/></svg></span></a></div><h4>Longa Andrea Mbuyamba</h4><div class="role">Responsable des programmes</div></div>
@@ -159,52 +181,73 @@
       <div class="team-card reveal"><div class="ph"><img src="assets/team-audrey.jpg" alt=""><a class="li" href="https://www.linkedin.com/in/audrey-rhodes/" target="_blank" rel="noopener" aria-label="LinkedIn"><span><svg viewBox="0 0 24 24"><path d="M6.94 5a1.94 1.94 0 1 1-3.88 0 1.94 1.94 0 0 1 3.88 0zM3.4 8.43h3.1V21H3.4V8.43zM9.2 8.43h2.97v1.72h.04c.41-.78 1.42-1.6 2.93-1.6 3.13 0 3.71 2.06 3.71 4.74V21h-3.1v-5.5c0-1.31-.02-3-1.83-3-1.83 0-2.11 1.43-2.11 2.9V21H9.2V8.43z"/></svg></span></a></div><h4>Audrey Rhodes</h4><div class="role">UX/UI Design</div></div>
       <div class="team-card reveal"><div class="ph"><img src="assets/team-aristide.jpg" alt=""><a class="li" href="https://www.linkedin.com/in/neiba-aristide-guy-kouakou-b2b49288/" target="_blank" rel="noopener" aria-label="LinkedIn"><span><svg viewBox="0 0 24 24"><path d="M6.94 5a1.94 1.94 0 1 1-3.88 0 1.94 1.94 0 0 1 3.88 0zM3.4 8.43h3.1V21H3.4V8.43zM9.2 8.43h2.97v1.72h.04c.41-.78 1.42-1.6 2.93-1.6 3.13 0 3.71 2.06 3.71 4.74V21h-3.1v-5.5c0-1.31-.02-3-1.83-3-1.83 0-2.11 1.43-2.11 2.9V21H9.2V8.43z"/></svg></span></a></div><h4>Aristide Neiba Kouakou</h4><div class="role">Software Architecture</div></div>
       <div class="team-card reveal"><div class="ph"><img src="assets/team-kirane.jpg" alt=""><a class="li" href="https://www.linkedin.com/in/kirane-y-b97519aa/" target="_blank" rel="noopener" aria-label="LinkedIn"><span><svg viewBox="0 0 24 24"><path d="M6.94 5a1.94 1.94 0 1 1-3.88 0 1.94 1.94 0 0 1 3.88 0zM3.4 8.43h3.1V21H3.4V8.43zM9.2 8.43h2.97v1.72h.04c.41-.78 1.42-1.6 2.93-1.6 3.13 0 3.71 2.06 3.71 4.74V21h-3.1v-5.5c0-1.31-.02-3-1.83-3-1.83 0-2.11 1.43-2.11 2.9V21H9.2V8.43z"/></svg></span></a></div><h4>Kirane Yassine</h4><div class="role">Strategic Sourcing</div></div>
+      <div class="team-card reveal"><div class="ph"><img src="assets/team-diane.jpg" alt=""><a class="li" href="https://www.linkedin.com/in/diane-brigitte-allou/" target="_blank" rel="noopener" aria-label="LinkedIn"><span><svg viewBox="0 0 24 24"><path d="M6.94 5a1.94 1.94 0 1 1-3.88 0 1.94 1.94 0 0 1 3.88 0zM3.4 8.43h3.1V21H3.4V8.43zM9.2 8.43h2.97v1.72h.04c.41-.78 1.42-1.6 2.93-1.6 3.13 0 3.71 2.06 3.71 4.74V21h-3.1v-5.5c0-1.31-.02-3-1.83-3-1.83 0-2.11 1.43-2.11 2.9V21H9.2V8.43z"/></svg></span></a></div><h4>Diane Allou</h4><div class="role">Office Manager</div></div>
     </div>
     <div class="team-cta"><a href="cofondateur.html" class="btn btn-accent">Rejoins-nous</a></div>
   </div>
 </section>
 
-<!-- AVANTAGES -->
+<!-- RESEAU -->
 <section class="section">
   <div class="wrap">
-    <div class="shead center reveal"><span class="eyebrow c-ocean" style="display:none;">Avantages</span><h2 class="disp">Des avantages pour propulser ton projet</h2></div>
-    <div class="gssn">
-      <div class="gssn-card reveal">
-        <img src="assets/gssn-card.jpg" alt="Global Startup Studio Network — 50+ startup studios membres">
+    <div class="shead center reveal"><h2 class="disp">Un réseau qui accélère ta startup</h2></div>
+    <div class="net-grid">
+      <div class="net-card reveal">
+        <span class="net-eye">Effet réseau</span>
+        <h3>Une communauté de startups</h3>
+        <p>Toutes nos startups ciblent le secteur informel. Elles partagent une base de clients commune, apprennent les unes des autres et accèdent à un go-to-market accéléré par effet réseau.</p>
       </div>
-      <div class="gssn-right reveal d1">
-        <div class="gssn-row">
-          <div class="ico"><img src="assets/customer-segment.svg" alt="" style="width: 26px"></div>
-          <div><h4>Go to Market</h4><p>Toutes nos startups visent le même terrain : le secteur informel. Résultat — elles apprennent les unes des autres et puisent dans une base de clients commune. Le go-to-market en sort accéléré.</p></div>
-        </div>
-        <div class="gssn-row">
-          <div class="ico"><img src="assets/globe.svg" alt=""></div>
-          <div><h4>Un réseau global</h4><p>Mstudio est membre officiel du GSSN (Global Startup Studio Network), une communauté sélective des meilleurs startup studios du monde entier. Le studio bénéficie ainsi d'une méthodologie reconnue mondialement sur l'encadrement des startups, de l'idéation au product-market fit.</p></div>
-        </div>
+      <div class="net-card reveal d1">
+        <span class="net-eye">Investisseurs</span>
+        <h3>50 Friendly VCs</h3>
+        <p>Un réseau de 50 VCs friendly, européens et africains, qui suivent nos startups dès l'EIR. Tu n'envoies pas de cold emails, tu entres dans des conversations déjà chaudes. Un tour de table qui se structure en mois, pas en années.</p>
+      </div>
+      <div class="net-card reveal d2">
+        <span class="net-eye">Corporates</span>
+        <h3>20+ Friendly Corporates</h3>
+        <p>Plus de 20 partenaires corporates curés par industrie : banques, grands groupes agro, télécoms, logisticiens. Tu accèdes aux décideurs, signes tes premiers contrats grands comptes et valides ton GTM B2B avant la Série A.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- APPORTONS -->
+<!-- CE QUE NOUS APPORTONS -->
 <section class="section bone">
   <div class="wrap">
-    <div class="shead reveal"><span class="eyebrow c-ocean" style="display:none;">Notre valeur ajoutée</span><h2 class="disp">Ce que nous apportons</h2><p>Plus qu'une structure d'accompagnement, nous sommes ton troisième cofondateur.</p></div>
-    <div class="app-tabs reveal d1">
-      <div class="app-tab active" data-i="0">Playbook</div>
-      <div class="app-tab" data-i="1">Intelligence artificielle</div>
-      <div class="app-tab" data-i="2">Outils</div>
-      <div class="app-tab" data-i="3">Réseau de partenaires</div>
-      <div class="app-tab" data-i="4">Bureaux</div>
+    <div class="shead reveal"><h2 class="disp">Ce que nous apportons</h2><p>Plus qu'une structure d'accompagnement, nous sommes ton troisième cofondateur.</p></div>
+    <div class="val-grid reveal d1">
+      <div class="val-card"><div class="val-n">100</div><h4>Tâches du playbook</h4><p>100 tâches reproductibles capitalisées sur nos lancements. Des méthodes éprouvées pour aller de l'idée à la Seed sans réinventer la roue.</p></div>
+      <div class="val-card"><div class="val-n">200</div><h4>Agents IA</h4><p>200 agents IA propriétaires : automatisation back-office, scoring, support client, opérations. Une stack qui accélère ton MVP et tes process dès le jour 1.</p></div>
+      <div class="val-card"><div class="val-n">30</div><h4>Outils</h4><p>30 outils dont ta startup a besoin pour communiquer, construire son produit et opérationnaliser ses process. Plug &amp; play, négociés, mutualisés.</p></div>
+      <div class="val-card"><div class="val-n">12</div><h4>VIP Guests / an</h4><p>12 VIP Guests par an viennent à Abidjan coacher, inspirer et transmettre leur savoir-faire à nos startups. Tech leaders, investisseurs, opérateurs internationaux.</p></div>
+      <div class="val-card"><div class="val-n">1</div><h4>Board Member</h4><p>1 board member par startup, avec une expertise internationale, qui s'implique dans la réussite de ton tour de table et tes décisions stratégiques.</p></div>
     </div>
-    <div class="app-panel reveal d1">
-      <div>
-        <div class="num disp" id="apNum">1</div>
-        <h4 id="apH">Playbook</h4>
-        <p id="apP">Un playbook maison : des processus reproductibles et les meilleures pratiques pour scaler ta startup sans réinventer la roue.</p>
-        <a href="cofondateur.html" class="btn btn-accent" style="margin-top:24px;">Rejoins-nous</a>
+  </div>
+</section>
+
+<!-- BUREAUX -->
+<section class="section">
+  <div class="wrap">
+    <div class="gssn">
+      <div class="gssn-card reveal"><img src="assets/bureaux.png" alt="Les bureaux Mstudio à l'Ivoire Trade Center, Abidjan"></div>
+      <div class="gssn-right reveal d1 feat-text">
+        <h2 class="disp">Au cœur d'Abidjan</h2>
+        <div class="feat-num">500 m²</div>
+        <p>Au cœur de l'Ivoire Trade Center à Abidjan, Mstudio met à ta disposition 500 m² d'espace : 3 salles de réunion, une mezzanine, un open space, 7 bureaux privés, 1 studio podcast, 8 cabines focus, 2 cabines téléphoniques et une terrasse extérieure.</p>
       </div>
-      <div class="app-illust"><img id="apImg" src="assets/playbook.jpg" alt="Playbook"></div>
+    </div>
+  </div>
+</section>
+
+<!-- METHODOLOGIE GSSN -->
+<section class="section bone">
+  <div class="wrap">
+    <div class="gssn">
+      <div class="gssn-right reveal feat-text">
+        <h2 class="disp">Une méthodologie reconnue mondialement</h2>
+        <p>Mstudio est membre officiel du GSSN (Global Startup Studio Network), la communauté sélective des meilleurs venture studios au monde. Méthodes éprouvées, peer learning et best practices importées en direct, de l'idéation au product-market fit.</p>
+      </div>
+      <div class="gssn-card reveal d1"><img src="assets/gssn-card.jpg" alt="Global Startup Studio Network, 50+ startup studios membres"></div>
     </div>
   </div>
 </section>
@@ -245,7 +288,7 @@
       <div>
         <h4>Contact</h4>
         <div class="footer-contact">
-          <div><img src="assets/marker.svg" alt="">ITC - Ivoire Trade Center, Abidjan</div>
+          <div><img src="assets/marker.svg" alt="">Rez-de-chaussée de la tour D, Ivoire Trade Center (ITC), Cocody, Abidjan</div>
           <div><img src="assets/envelope.svg" alt="">infos@mstudio.vc</div>
         </div>
       </div>
@@ -256,7 +299,7 @@
             <input type="email" placeholder="Votre e-mail" required>
             <button type="submit" aria-label="S'inscrire"><svg viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg></button>
           </form>
-          <p style="color:#8b91bb;font-size:14px;margin-top:14px;">Le terrain, le mobile et l'impact — une fois par mois.</p>
+          <p style="color:#8b91bb;font-size:14px;margin-top:14px;">Le terrain, le mobile et l'impact, une fois par mois.</p>
         </div>
       </div>
     </div>
@@ -277,22 +320,6 @@ menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.class
 const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-const AP=[
- {n:"1",h:"Playbook",p:"Un playbook maison : des processus reproductibles et les meilleures pratiques pour scaler ta startup sans réinventer la roue.",img:"assets/playbook.jpg"},
- {n:"AI",h:"Intelligence artificielle",p:"des modèles d'IA propriétaires entraînés sur les données du secteur informel pour accélérer les analyses et la prise de décision.",img:"assets/ai.jpg"},
- {n:"10+",h:"Outils",p:"une suite d'outils internes pour le tracking, le CRM et le reporting commune à toutes nos startups.",img:"assets/outils.png"},
- {n:"200+",h:"Réseau de partenaires",p:"un réseau de mentors, d'investisseurs et de partenaires opérationnels mobilisable dès le premier jour.",img:"assets/reseau.png"},
- {n:"24/7",h:"Bureaux",p:"des espaces de travail à Abidjan pensés pour la collaboration et la productivité de nos équipes.",img:"assets/bureaux.png"},
-];
-document.querySelectorAll('.app-tab').forEach(t=>t.addEventListener('click',()=>{
-  document.querySelectorAll('.app-tab').forEach(x=>x.classList.remove('active'));
-  t.classList.add('active');
-  const a=AP[+t.dataset.i];
-  document.getElementById('apNum').textContent=a.n;
-  document.getElementById('apH').textContent=a.h;
-  document.getElementById('apP').textContent=a.p;
-  document.getElementById('apImg').src=a.img;
-}));
 </script>
 </body>
 </html>
