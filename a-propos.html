@@ -109,6 +109,12 @@
 .arch-img{align-self:stretch;display:flex;}
 .arch-img img{width:100%;height:100%;min-height:340px;object-fit:cover;border-radius:1000px 1000px 0 0;}
 @media(max-width:900px){.arch-img img{min-height:300px;}}
+.edge-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:8px;}
+@media(max-width:1080px){.edge-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:560px){.edge-grid{grid-template-columns:1fr;}}
+.edge-band{margin-top:30px;background:var(--space);color:#fff;border-radius:20px;padding:28px 40px;text-align:center;}
+.edge-band p{margin:0;font-size:19px;font-weight:600;line-height:1.5;}
+.edge-band b{color:#38B6AB;}
 </style>
 <!-- SEO -->
 <meta name="description" content="Découvre Mstudio : notre équipe, notre méthode de venture studio et le réseau qui accélère les startups d'Afrique francophone, de l'idée au Seed.">
@@ -211,29 +217,42 @@
   </div>
 </section>
 
-<!-- RESEAU -->
+<!-- COMPETITIVE EDGE -->
 <section class="section">
   <div class="wrap">
-    <div class="shead center reveal"><h2 class="disp">Un réseau qui accélère ta startup</h2></div>
-    <div class="net-grid">
-      <div class="net-card reveal">
+    <div class="shead center reveal" style="max-width:780px;margin-inline:auto;">
+      <span class="net-eye" style="display:block;margin-bottom:12px;">Notre avantage</span>
+      <h2 class="disp">On ne construit pas un écosystème seul</h2>
+      <p>Une startup qui démarre seule réinvente tout, à chaque étape. Nos projets, eux, ne travaillent jamais en silo : ils partagent leurs ressources, se complètent sur les mêmes chaînes de valeur et grandissent dans un même écosystème. C'est ce qui nous permet d'aller plus loin, plus vite.</p>
+    </div>
+    <div class="edge-grid reveal d1">
+      <div class="net-card">
+        <div class="net-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="2.4"/><circle cx="18" cy="6" r="2.4"/><circle cx="18" cy="18" r="2.4"/><path d="M8.2 10.9 15.8 7.1M8.2 13.1 15.8 16.9"/></svg></div>
+        <span class="net-eye">Ressources partagées</span>
+        <h3>Mutualisation</h3>
+        <p>Playbook, go-to-market, know-how, outils, talents : ce qu'une startup apprend, toutes les autres en profitent. Personne ne repart de zéro.</p>
+      </div>
+      <div class="net-card">
+        <div class="net-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 13.5 14.5 8.5"/><path d="M8 11 6 13a3.2 3.2 0 0 0 4.5 4.5l2-2"/><path d="M16 13l2-2a3.2 3.2 0 0 0-4.5-4.5l-2 2"/></svg></div>
+        <span class="net-eye">Chaînes de valeur</span>
+        <h3>Complémentarité</h3>
+        <p>Nos startups se branchent sur les mêmes chaînes de valeur. Les clients et les données de l'une nourrissent l'autre, et l'écosystème se renforce à chaque nouveau lancement.</p>
+      </div>
+      <div class="net-card">
+        <div class="net-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><path d="M12 7v3M10.7 11 6.3 16M13.3 11 17.7 16"/></svg></div>
+        <span class="net-eye">Pas de silo</span>
+        <h3>Écosystème ouvert</h3>
+        <p>VCs, corporates, partenaires, institutions : nos portes sont ouvertes. On ne bâtit pas un écosystème seul, on le construit avec tout le monde autour de nous.</p>
+      </div>
+      <div class="net-card">
         <div class="net-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3 2.7-5 6-5s6 2 6 5"/><path d="M16 5.5a3 3 0 0 1 0 5.4"/><path d="M18 14.5c2 .6 3.5 2.3 3.5 4.5"/></svg></div>
-        <span class="net-eye">Effet réseau</span>
-        <h3>Une communauté de startups</h3>
-        <p>Toutes nos startups ciblent le secteur informel. Elles partagent une base de clients commune, apprennent les unes des autres et accèdent à un go-to-market accéléré par effet réseau.</p>
+        <span class="net-eye">Entre pairs</span>
+        <h3>Communauté de fondateurs</h3>
+        <p>Nos cofondateurs forment une communauté exigeante et solidaire. Ils avancent ensemble, partagent leurs réflexes et tirent tout le groupe vers le haut.</p>
       </div>
-      <div class="net-card reveal d1">
-        <div class="net-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M21 8v4h-4"/></svg></div>
-        <span class="net-eye">Investisseurs</span>
-        <h3>50 Friendly VCs</h3>
-        <p>Un réseau de 50 VCs friendly, européens et africains, qui suivent nos startups dès l'EIR. Tu n'envoies pas de cold emails, tu entres dans des conversations déjà chaudes. Un tour de table qui se structure en mois, pas en années.</p>
-      </div>
-      <div class="net-card reveal d2">
-        <div class="net-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="11" height="18" rx="1"/><path d="M15 8h5v13H4"/><path d="M8 7h3M8 11h3M8 15h3"/></svg></div>
-        <span class="net-eye">Corporates</span>
-        <h3>20+ Friendly Corporates</h3>
-        <p>Plus de 20 partenaires corporates curés par industrie : banques, grands groupes agro, télécoms, logisticiens. Tu accèdes aux décideurs, signes tes premiers contrats grands comptes et valides ton GTM B2B avant la Série A.</p>
-      </div>
+    </div>
+    <div class="edge-band reveal d2">
+      <p>Notre objectif : aller beaucoup plus vite, et beaucoup plus loin. <b>Ensemble.</b></p>
     </div>
   </div>
 </section>
@@ -246,8 +265,9 @@
       <div class="app-tab active" data-i="0">Playbook</div>
       <div class="app-tab" data-i="1">Agents IA</div>
       <div class="app-tab" data-i="2">Outils</div>
-      <div class="app-tab" data-i="3">VIP Guests</div>
-      <div class="app-tab" data-i="4">Board</div>
+      <div class="app-tab" data-i="3">Bureaux</div>
+      <div class="app-tab" data-i="4">VIP Guests</div>
+      <div class="app-tab" data-i="5">Board</div>
     </div>
     <div class="app-panel reveal d1">
       <div>
@@ -261,16 +281,16 @@
   </div>
 </section>
 
-<!-- BUREAUX -->
+<!-- FRIENDLY VCS -->
 <section class="section">
   <div class="wrap">
     <div class="gssn">
-      <div class="arch-img reveal"><img src="assets/bureaux.webp" alt="Les bureaux Mstudio à l'Ivoire Trade Center, Abidjan"></div>
+      <div class="arch-img reveal"><img src="assets/friendly-vcs.webp" alt="Le réseau de Friendly VCs de Mstudio, en Europe et en Afrique"></div>
       <div class="gssn-right reveal d1 feat-text">
-        <span class="net-eye">Nos bureaux</span>
-        <h2 class="disp">Un lieu pensé pour construire</h2>
-        <p>Au rez-de-chaussée de la tour D de l'Ivoire Trade Center, en plein cœur du quartier des ambassades à Cocody, nos bureaux sont bien plus qu'un espace de travail. C'est là que nos équipes et nos cofondateurs se croisent chaque jour, que les idées circulent et que les startups grandissent côte à côte.</p>
-        <p>Salles de réunion, open space, studio podcast, cabines focus et terrasse extérieure : près de 500 m² entièrement pensés pour construire vite et bien, ensemble.</p>
+        <span class="net-eye">Nos investisseurs</span>
+        <h2 class="disp">Un réseau de Friendly VCs qui suit nos startups</h2>
+        <p>Plus de 50 fonds friendly, européens et africains, suivent nos projets dès l'EIR. Tes premières conversations ne partent pas d'un cold email : elles partent d'une relation déjà construite par le studio.</p>
+        <p>Du pre-seed à la Série A, un tour de table qui se structure en mois, pas en années. On y ajoute plus de 20 corporates partenaires curés par industrie, pour signer tes premiers grands comptes avant la levée.</p>
       </div>
     </div>
   </div>
@@ -362,6 +382,7 @@ const AP=[
  {n:'100',h:'Tâches du playbook',p:"100 tâches reproductibles capitalisées sur tous nos lancements. Des méthodes éprouvées pour aller de l'idée à la Seed sans réinventer la roue.",img:'assets/playbook.jpg'},
  {n:'200',h:'Agents IA',p:"200 agents IA propriétaires qui automatisent le back-office, le scoring, le support client et les opérations. Une stack qui accélère ton MVP et tes process dès le premier jour.",img:'assets/ai.jpg'},
  {n:'30',h:'Outils',p:"30 outils dont ta startup a besoin pour communiquer, construire son produit et opérationnaliser ses process. Négociés et mutualisés, prêts à l'emploi.",img:'assets/outils.png'},
+ {n:'500 m²',h:'Bureaux à Abidjan',p:"Près de 500 m² au rez-de-chaussée de la tour D de l'Ivoire Trade Center, au cœur du quartier des ambassades. Open space, salles de réunion, studio podcast et terrasse : un lieu pensé pour que les équipes et les cofondateurs se croisent et construisent ensemble.",img:'assets/bureaux.webp'},
  {n:'12',h:'VIP Guests par an',p:"12 VIP Guests viennent chaque année à Abidjan coacher et inspirer nos startups : tech leaders, investisseurs et opérateurs internationaux qui transmettent leur savoir-faire.",img:'assets/reseau.png'},
  {n:'1',h:'Board Member',p:"1 board member par startup, avec une expertise internationale, qui s'implique dans ton tour de table et tes décisions stratégiques.",img:'assets/ap-coreteam.jpg'},
 ];
