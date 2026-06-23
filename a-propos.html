@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>À propos · Mstudio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="v2.css?v=47">
+<link rel="stylesheet" href="v2.css?v=49">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="256x256" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -166,6 +166,7 @@
       <h1 class="disp reveal d1">Entrepreneurs <span class="tint">pour</span> entrepreneurs</h1>
       <p class="reveal d2">Nous sommes des entrepreneurs internationaux dans la tech qui utilisons notre expérience pour accompagner d'autres entrepreneurs.</p>
       <p class="reveal d2">Nous sommes trois cofondateurs. <b>Leslie Ossété</b>, sa connaissance intime du secteur informel. <b>Cédric Mangaud</b>, son ADN produit mobile. <b>Clyde Fakhoury</b>, son expertise de l'investissement en Afrique.</p>
+      <p class="reveal d2"><b>Entrepreneurs pour entrepreneurs</b> : on l'a vécu, aujourd'hui on construit avec toi.</p>
       <a href="#cta" class="btn btn-accent reveal d3">Rejoins-nous</a>
     </div>
     <div class="ap-hero-photo reveal d2"><img src="assets/fondateurs.webp" alt="Les cofondateurs"></div>
@@ -296,6 +297,13 @@
   </div>
 </section>
 
+<!-- FRIENDLY VCS — logos -->
+<section class="section" style="padding-top:0;">
+  <div class="marq reveal">
+    <div class="marq-track" id="marqA"></div>
+  </div>
+</section>
+
 <!-- METHODOLOGIE GSSN -->
 <section class="section bone">
   <div class="wrap">
@@ -314,8 +322,8 @@
 <section id="cta" style="padding:0;">
   <div class="cta cta-flush reveal">
     <img class="side-pat right" src="assets/pat-equite.svg" alt="" style="opacity:.07;width:90%;height:auto;right:auto;left:50%;top:auto;bottom:-30%;transform:translateX(-50%) rotate(-90deg);transform-origin:center;">
-    <h2 class="disp">Construisons la prochaine grande startup. <span class="tint">Ensemble.</span></h2>
-    <p class="cta-sub">De l'idée au Seed Round, on co-fonde à tes côtés.</p>
+    <h2 class="disp">Construisons les startups qui résolvent de vrais problèmes. <span class="tint">Ensemble.</span></h2>
+    <p class="cta-sub">De l'idée au Seed Round, on co-fonde à tes côtés — pour un impact sociétal, économique et environnemental réel.</p>
     <div class="cta-actions">
       <a href="https://mstudio.recruitee.com" target="_blank" rel="noopener" class="btn btn-accent">Postuler comme cofondateur</a>
     </div>
@@ -351,13 +359,10 @@
         </div>
       </div>
       <div>
-        <h4>Newsletter</h4>
-        <div class="footer-news">
-          <form onsubmit="event.preventDefault();this.reset();">
-            <input type="email" placeholder="Votre e-mail" required>
-            <button type="submit" aria-label="S'inscrire"><svg viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg></button>
-          </form>
-          <p style="color:#8b91bb;font-size:14px;margin-top:14px;">Le terrain, le mobile et l'impact, une fois par mois.</p>
+        <h4>Travaillons ensemble</h4>
+        <div class="footer-join">
+          <p>Envie de co-fonder ta prochaine startup avec nous ?</p>
+          <a href="https://mstudio.recruitee.com" target="_blank" rel="noopener" class="btn btn-accent footer-apply">Postuler</a>
         </div>
       </div>
     </div>
@@ -390,6 +395,14 @@ const apTabs=document.querySelectorAll('.app-tab');
 function renderAp(i){const a=AP[i];document.getElementById('apNum').textContent=a.n;document.getElementById('apH').textContent=a.h;document.getElementById('apP').textContent=a.p;document.getElementById('apImg').src=a.img;apTabs.forEach((t,j)=>t.classList.toggle('active',j===i));}
 apTabs.forEach((t,i)=>t.addEventListener('click',()=>renderAp(i)));
 renderAp(0);
+
+/* VC marquee (Friendly VCs) */
+(function(){
+  const el=document.getElementById('marqA'); if(!el) return;
+  let h='';
+  for(let n=1;n<=50;n++){ const id=String(n).padStart(2,'0'); h+='<div class="marq-logo"><img src="assets/vclogo/'+id+'.png" alt="" loading="lazy"></div>'; }
+  el.innerHTML=h+h;
+})();
 
 
 </script>
