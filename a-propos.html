@@ -118,6 +118,32 @@
 .edge-band::after{content:"";position:absolute;inset:0;background:url(assets/hero-pattern.svg) right -40px center/auto 240% no-repeat;opacity:.14;pointer-events:none;}
 .edge-band p{position:relative;margin:0;font-size:20px;font-weight:600;line-height:1.5;}
 .edge-band b{color:#5BE0CF;}
+
+/* Notre histoire — bande "âme" sombre */
+.histoire{position:relative;background:var(--space);color:#fff;overflow:hidden;}
+.histoire .hg{position:absolute;border-radius:50%;filter:blur(130px);pointer-events:none;}
+.histoire .hg1{width:600px;height:600px;background:var(--ocean);top:-260px;left:-180px;opacity:.30;}
+.histoire .hg2{width:560px;height:560px;background:#38B6AB;bottom:-320px;right:-180px;opacity:.16;}
+.histoire::after{content:"";position:absolute;inset:0;background:url(assets/hero-pattern.svg) right -70px top -50px/auto 150% no-repeat;opacity:.06;pointer-events:none;}
+.hist-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.12fr 0.88fr;gap:60px;align-items:center;}
+.hist-text .net-eye{color:#5BE0CF;}
+.hist-text h2{color:#fff;margin:14px 0 0;}
+.hist-text p{color:#c5cbe6;font-size:18px;line-height:1.75;margin-top:22px;max-width:62ch;}
+.hist-text p b{color:#fff;font-weight:700;}
+.hist-fig{position:relative;display:flex;flex-direction:column;align-items:flex-start;}
+.hist-fig .big{font-family:'Funnel Display';font-weight:800;font-size:clamp(92px,12vw,164px);line-height:.88;letter-spacing:-0.04em;background:linear-gradient(120deg,#5BE0CF,#0077B6);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;}
+.hist-fig .big sup{font-size:.42em;vertical-align:super;font-weight:700;-webkit-text-fill-color:#5BE0CF;}
+.hist-fig .cap{color:#c5cbe6;font-size:16px;line-height:1.62;margin-top:14px;max-width:32ch;}
+@media(max-width:1080px){.hist-grid{grid-template-columns:1fr;gap:38px;}}
+
+/* Notre ambition — bande claire d'élan */
+.ambition{position:relative;overflow:hidden;background:linear-gradient(180deg,#fff,#F2F6FC);}
+.ambition::after{content:"";position:absolute;inset:0;background:url(assets/hero-pattern.svg) left -90px bottom -70px/auto 160% no-repeat;opacity:.05;pointer-events:none;}
+.amb-in{position:relative;z-index:2;max-width:900px;margin-inline:auto;text-align:center;}
+.amb-in .net-eye{color:#38B6AB;display:block;}
+.amb-in h2{margin:14px 0 0;font-size:clamp(34px,4.6vw,60px);font-weight:800;}
+.amb-in p{color:var(--slate);font-size:19px;line-height:1.78;margin:26px auto 0;max-width:64ch;}
+.amb-hi{background:linear-gradient(100deg,var(--ocean),#38B6AB);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;font-weight:700;}
 </style>
 <!-- SEO -->
 <meta name="description" content="Découvre Mstudio : notre équipe, notre méthode de venture studio et le réseau qui accélère les startups d'Afrique francophone, de l'idée au Seed.">
@@ -221,6 +247,24 @@
   </div>
 </section>
 
+<!-- NOTRE HISTOIRE -->
+<section class="section histoire">
+  <div class="hg hg1"></div>
+  <div class="hg hg2"></div>
+  <div class="wrap hist-grid">
+    <div class="hist-text reveal">
+      <span class="net-eye">Notre histoire</span>
+      <h2 class="disp">Pourquoi Mstudio</h2>
+      <p>L'Afrique francophone est l'une des régions les plus jeunes du monde. Chaque année, des millions de jeunes arrivent sur le marché du travail sans y trouver d'emploi stable. Et l'économie informelle — portée par des commerçants en majorité femmes et jeunes — reste fragile : précarité, exclusion financière, peu de structure.</p>
+      <p>En 2022, à Abidjan, on a fait un choix : <b>agir</b>. Mstudio est né d'une conviction simple — transformer cette économie commence par digitaliser les commerçants africains, et une startup bien construite est le véhicule le plus rapide pour y arriver.</p>
+    </div>
+    <div class="hist-fig reveal d1">
+      <div class="big">~80<sup>%</sup></div>
+      <p class="cap">des emplois en Afrique francophone reposent sur l'économie informelle.</p>
+    </div>
+  </div>
+</section>
+
 <!-- COMPETITIVE EDGE -->
 <section class="section">
   <div class="wrap">
@@ -318,6 +362,17 @@
         <p>Mstudio est membre officiel du GSSN (Global Startup Studio Network), la communauté sélective des meilleurs venture studios au monde. Méthodes éprouvées, peer learning et best practices importées en direct, de l'idéation au product-market fit.</p>
       </div>
       <div class="arch-img reveal d1"><img src="assets/gssn-card.jpg" alt="Global Startup Studio Network, 50+ startup studios membres"></div>
+    </div>
+  </div>
+</section>
+
+<!-- NOTRE AMBITION -->
+<section class="section ambition">
+  <div class="wrap">
+    <div class="amb-in reveal">
+      <span class="net-eye">Notre ambition</span>
+      <h2 class="disp">Où on va</h2>
+      <p>On construit pour durer : une dizaine de lancements par an, des startups qui se branchent sur les mêmes chaînes de valeur, et un écosystème où chaque projet rend le suivant plus solide. L'ambition n'est pas que financière — c'est que demain, l'économie informelle d'Afrique francophone devienne <span class="amb-hi">un moteur d'inclusion</span>, structuré par celles et ceux qui la font vivre.</p>
     </div>
   </div>
 </section>
