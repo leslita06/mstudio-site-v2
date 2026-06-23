@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>Mstudio · Venture studio mobile-first d'Afrique francophone</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="v2.css?v=49">
+<link rel="stylesheet" href="v2.css?v=50">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="256x256" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -239,15 +239,10 @@
 
 <!-- ===== PRESSE ===== -->
 <section class="section bone press">
-  <div class="wrap">
+  <div class="wrap" style="max-width:none;padding-left:0;padding-right:0;">
     <div class="shead center reveal" style="margin-bottom:40px;"><span class="eyebrow c-ocean" style="display:none;">Presse</span><h2 class="disp">Ils parlent de nous</h2></div>
-    <div class="press-row reveal d1">
-      <span class="press-logo">Forbes <b>Afrique</b></span>
-      <span class="press-logo">Tech<b>Cabal</b></span>
-      <span class="press-logo">Agence <b>Ecofin</b></span>
-      <span class="press-logo">Sika<b>finance</b></span>
-      <span class="press-logo">CIO <b>Mag</b></span>
-      <span class="press-logo">Afrique <b>IT News</b></span>
+    <div class="pmarq reveal d1">
+      <div class="pmarq-track" id="pmarq"></div>
     </div>
   </div>
 </section>
@@ -373,6 +368,25 @@ function renderAp(i){
 document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));t.classList.add('active');renderAp(+t.dataset.i);}));
 
 /* VC marquee déplacé sur la page À propos */
+
+/* Presse — bande de logos cliquables vers les articles vérifiés */
+const PRESS=[
+ {n:"Forbes Afrique",f:"forbes-afrique.png",u:"https://www.pressreader.com/france/forbes-afrique/20230601/282561612772186"},
+ {n:"TechCabal",f:"techcabal.png",u:"https://techcabal.com/2023/03/24/ivorian-mstudio/"},
+ {n:"Agence Ecofin",f:"agence-ecofin.png",u:"https://www.agenceecofin.com/entreprendre/3105-108788-mstudio-notre-demarche-vise-a-combler-le-fosse-d-investissement-en-afrique-francophone"},
+ {n:"Launch Base Africa",f:"launchbase-africa.jpg",u:"https://launchbaseafrica.com/2026/02/24/the-diaspora-founder-formula-behind-cote-divoires-most-prolific-venture-studio/"},
+ {n:"CIO Mag",f:"cio-mag.png",u:"https://cio-mag.com/cote-divoire-mstudio-chacune-de-nos-startups-recoit-un-investissement-preseed-de-250-000-euros/"},
+ {n:"We Are Tech Africa",f:"wearetech.png",u:"https://www.wearetech.africa/fr/fils/tech-stars/avec-mstudio-la-congolaise-leslie-ossete-veut-lancer-30-champions-de-la-tech-en-afrique-de-l-ouest-francophone"},
+ {n:"Sikafinance",f:"sikafinance.png",u:"https://www.sikafinance.com/marches/mstudio-createur-de-startups-sinstalle-a-abidjan-pour-couvrir-lafrique-francophone_39602"},
+ {n:"Afrique IT News",f:"afrique-it-news.png",u:"https://afriqueitnews.com/startups/mstudio-transforme-startups-afrique-francophone-cote-ivoire/"},
+ {n:"CEO Afrique",f:"ceo-afrique.png",u:"https://www.ceoafrique.com/post/mstudio-startup-tech-africaine"},
+ {n:"Techpoint Africa",f:"techpoint.png",u:"https://techpoint.africa/insight/mstudio-wants-to-spur-growth-in-francophone-africa/"},
+];
+(function(){
+  const el=document.getElementById('pmarq'); if(!el) return;
+  const one=PRESS.map(p=>`<a class="pmarq-logo" href="${p.u}" target="_blank" rel="noopener noreferrer" title="${p.n} — lire l'article"><img src="assets/presslogo/${p.f}" alt="${p.n}" loading="lazy"></a>`).join('');
+  el.innerHTML=one+one; /* duplication pour boucle continue */
+})();
 
 /* Testimonials */
 const T=[
