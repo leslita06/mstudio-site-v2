@@ -87,11 +87,13 @@
 
 /* Reseau (section 4) */
 .net-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-.net-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:34px 30px;display:flex;flex-direction:column;gap:13px;transition:transform .3s var(--ease),box-shadow .3s var(--ease);}
-.net-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(3,4,94,.08);}
-.net-card .net-eye{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#38B6AB;font-weight:700;}
-.net-card h3{color:var(--space);font-size:22px;font-weight:700;margin:0;}
-.net-card p{color:var(--slate);font-size:15.5px;line-height:1.62;margin:0;}
+.net-card{position:relative;background:linear-gradient(180deg,#fff,#FBFAFF);border:1px solid rgba(3,4,94,.05);border-radius:24px;padding:38px 30px 34px;display:flex;flex-direction:column;gap:15px;box-shadow:0 10px 34px rgba(3,4,94,.06);transition:transform .35s var(--ease),box-shadow .35s var(--ease);overflow:hidden;}
+.net-card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#0077B6,#38B6AB);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease);}
+.net-card:hover{transform:translateY(-6px);box-shadow:0 26px 56px rgba(3,4,94,.13);}
+.net-card:hover::before{transform:scaleX(1);}
+.net-card .net-eye{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:#38B6AB;font-weight:800;}
+.net-card h3{color:var(--space);font-size:21px;font-weight:800;margin:0;letter-spacing:-.2px;}
+.net-card p{color:var(--slate);font-size:15px;line-height:1.64;margin:0;}
 /* Ce que nous apportons (section 5) */
 .val-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;}
 .val-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px 22px;}
@@ -104,17 +106,18 @@
 .feat-num{font-family:'Funnel Display';font-weight:800;font-size:clamp(52px,7vw,84px);color:var(--ocean);line-height:.9;letter-spacing:-0.03em;margin-top:14px;}
 @media(max-width:1080px){.net-grid{grid-template-columns:1fr;}.val-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:600px){.val-grid{grid-template-columns:1fr;}}
-.net-ico{width:54px;height:54px;border-radius:15px;background:linear-gradient(135deg,#0077B6,#38B6AB);display:grid;place-items:center;color:#fff;}
-.net-ico svg{width:27px;height:27px;}
+.net-ico{width:62px;height:62px;border-radius:18px;background:linear-gradient(135deg,#0077B6,#38B6AB);display:grid;place-items:center;color:#fff;box-shadow:0 12px 24px rgba(56,182,171,.32);margin-bottom:4px;}
+.net-ico svg{width:30px;height:30px;}
 .arch-img{align-self:stretch;display:flex;}
 .arch-img img{width:100%;height:100%;min-height:340px;object-fit:cover;border-radius:1000px 1000px 0 0;}
 @media(max-width:900px){.arch-img img{min-height:300px;}}
-.edge-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:8px;}
+.edge-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:20px;}
 @media(max-width:1080px){.edge-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:560px){.edge-grid{grid-template-columns:1fr;}}
-.edge-band{margin-top:30px;background:var(--space);color:#fff;border-radius:20px;padding:28px 40px;text-align:center;}
-.edge-band p{margin:0;font-size:19px;font-weight:600;line-height:1.5;}
-.edge-band b{color:#38B6AB;}
+.edge-band{position:relative;margin-top:36px;background:linear-gradient(120deg,#03045E 0%,#0077B6 100%);color:#fff;border-radius:24px;padding:36px 46px;text-align:center;overflow:hidden;box-shadow:0 20px 48px rgba(3,4,94,.20);}
+.edge-band::after{content:"";position:absolute;inset:0;background:url(assets/hero-pattern.svg) right -40px center/auto 240% no-repeat;opacity:.14;pointer-events:none;}
+.edge-band p{position:relative;margin:0;font-size:20px;font-weight:600;line-height:1.5;}
+.edge-band b{color:#5BE0CF;}
 </style>
 <!-- SEO -->
 <meta name="description" content="Découvre Mstudio : notre équipe, notre méthode de venture studio et le réseau qui accélère les startups d'Afrique francophone, de l'idée au Seed.">
@@ -164,9 +167,9 @@
     <div>
       <span class="eyebrow c-ocean reveal" style="display:none;">À propos</span>
       <h1 class="disp reveal d1">Entrepreneurs <span class="tint">pour</span> entrepreneurs</h1>
-      <p class="reveal d2">Nous sommes des entrepreneurs internationaux dans la tech qui utilisons notre expérience pour accompagner d'autres entrepreneurs.</p>
-      <p class="reveal d2">Nous sommes trois cofondateurs. <b>Leslie Ossété</b>, sa connaissance intime du secteur informel. <b>Cédric Mangaud</b>, son ADN produit mobile. <b>Clyde Fakhoury</b>, son expertise de l'investissement en Afrique.</p>
-      <p class="reveal d2"><b>Entrepreneurs pour entrepreneurs</b> : on l'a vécu, aujourd'hui on construit avec toi.</p>
+      <p class="reveal d2">Nous avons lancé, financé et fait grandir des startups à l'international. Aujourd'hui, on met cette expérience au service des fondateurs d'Afrique francophone.</p>
+      <p class="reveal d2">Nous sommes trois cofondateurs : <b>Leslie Ossété</b> apporte sa connaissance intime du secteur informel, <b>Cédric Mangaud</b> son ADN produit mobile, et <b>Clyde Fakhoury</b> son expertise de l'investissement en Afrique.</p>
+      <p class="reveal d2">On l'a vécu de l'intérieur. Aujourd'hui, on le construit avec toi.</p>
       <a href="#cta" class="btn btn-accent reveal d3">Rejoins-nous</a>
     </div>
     <div class="ap-hero-photo reveal d2"><img src="assets/fondateurs.webp" alt="Les cofondateurs"></div>
